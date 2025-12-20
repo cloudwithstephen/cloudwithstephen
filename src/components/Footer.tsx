@@ -1,4 +1,4 @@
-import { Terminal, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Cloud, Github, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,12 +10,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Terminal className="w-4 h-4 text-primary-foreground" />
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Cloud className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="font-mono font-medium">
-                <span className="text-primary">dev</span>
-                <span className="text-foreground">.portfolio</span>
+              <span className="font-semibold">
+                <span className="text-primary">cloud</span>
+                <span className="text-foreground">withstephen</span>
               </span>
             </a>
 
@@ -29,7 +29,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex items-center gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/cloudwithstephen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg hover:bg-secondary transition-colors"
@@ -38,7 +38,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/cloudwithstephen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg hover:bg-secondary transition-colors"
@@ -47,7 +47,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@yourname.dev"
+                href="mailto:hello@cloudwithstephen.com"
                 className="p-2 rounded-lg hover:bg-secondary transition-colors"
                 aria-label="Email"
               >
@@ -62,7 +62,7 @@ const Footer = () => {
               Built with <Heart className="w-3 h-3 text-destructive" /> using React, TypeScript & Tailwind
             </p>
             <p className="text-xs text-muted-foreground mt-2">
-              © {currentYear} Your Name. All rights reserved.
+              © {currentYear} cloudwithstephen. All rights reserved.
             </p>
           </div>
         </div>

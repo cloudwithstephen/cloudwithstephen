@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Terminal } from 'lucide-react';
+import { Menu, X, Cloud } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const navLinks = [
   { href: '#about', label: 'About' },
@@ -26,19 +27,19 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-card border-b border-glass-border py-3' : 'py-5'
+        scrolled ? 'glass-card border-b border-glass-border py-3' : 'py-5 bg-background/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Terminal className="w-5 h-5 text-primary-foreground" />
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Cloud className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-mono font-semibold text-lg hidden sm:block">
-              <span className="text-primary">dev</span>
-              <span className="text-foreground">.portfolio</span>
+            <span className="font-semibold text-lg hidden sm:block">
+              <span className="text-primary">cloud</span>
+              <span className="text-foreground">withstephen</span>
             </span>
           </a>
 
@@ -55,21 +56,24 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="hero" size="sm" asChild>
-              <a href="#contact">Hire Me</a>
-            </Button>
-          </div>
+          {/* Right Side Actions */}
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <div className="hidden md:block">
+              <Button variant="hero" size="sm" asChild>
+                <a href="#contact">Hire Me</a>
+              </Button>
+            </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
