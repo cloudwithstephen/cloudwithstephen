@@ -1,4 +1,4 @@
-import { Cloud, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Cloud, Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,9 +21,24 @@ const Footer = () => {
 
             {/* Quick Links */}
             <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-              <a href="#about" className="hover:text-foreground transition-colors">About</a>
-              <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
-              <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+              <a
+                href="#about"
+                className="hover:text-foreground transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="#projects"
+                className="hover:text-foreground transition-colors"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-foreground transition-colors"
+              >
+                Contact
+              </a>
             </nav>
 
             {/* Social Links */}
@@ -38,7 +53,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com/in/cloudwithstephen"
+                href="www.linkedin.com/in/stephen-james-215907322"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg hover:bg-secondary transition-colors"
@@ -47,7 +62,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@cloudwithstephen.com"
+                href="mailto:cloudwithstephen@gmail.com"
                 className="p-2 rounded-lg hover:bg-secondary transition-colors"
                 aria-label="Email"
               >
@@ -59,7 +74,8 @@ const Footer = () => {
           {/* Copyright */}
           <div className="mt-8 pt-8 border-t border-border text-center">
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              Built with <Heart className="w-3 h-3 text-destructive" /> using React, TypeScript & Tailwind
+              Built with <Heart className="w-3 h-3 text-destructive" /> using
+              React, TypeScript & Tailwind
             </p>
             <p className="text-xs text-muted-foreground mt-2">
               © {currentYear} cloudwithstephen. All rights reserved.
