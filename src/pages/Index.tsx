@@ -1,13 +1,50 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from 'react-helmet-async';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import SkillsSection from '@/components/SkillsSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import WorkflowSection from '@/components/WorkflowSection';
+import ExperienceSection from '@/components/ExperienceSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>Front-End Developer | DevOps & Cloud Engineer Portfolio</title>
+        <meta
+          name="description"
+          content="Experienced Front-End Developer transitioning to DevOps & Cloud Engineering. Building scalable web experiences and automating cloud infrastructure."
+        />
+        <meta
+          name="keywords"
+          content="front-end developer, devops engineer, cloud engineer, react developer, aws, docker, ci/cd, portfolio"
+        />
+        <meta property="og:title" content="Front-End Developer | DevOps & Cloud Engineer" />
+        <meta
+          property="og:description"
+          content="Building scalable web experiences and automating cloud infrastructure."
+        />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://yourname.dev" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background text-foreground">
+        <Navigation />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <WorkflowSection />
+          <ExperienceSection />
+          <ContactSection />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
