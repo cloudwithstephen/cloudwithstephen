@@ -1,34 +1,43 @@
-import { useState } from 'react';
-import { Mail, Github, Linkedin, MessageCircle, Send, ArrowRight, MapPin, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MessageCircle,
+  Send,
+  ArrowRight,
+  MapPin,
+  Clock,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 const contactLinks = [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'hello@yourname.dev',
-    href: 'mailto:hello@yourname.dev',
+    label: "Email",
+    value: "cloudwithstephen@gmail.com",
+    href: "mailto:cloudwithstephen@gmail.com",
   },
   {
     icon: Github,
-    label: 'GitHub',
-    value: '@yourusername',
-    href: 'https://github.com',
+    label: "GitHub",
+    value: "@cloudwithstephen",
+    href: "https://github.com/cloudwithstephen",
   },
   {
     icon: Linkedin,
-    label: 'LinkedIn',
-    value: '/in/yourname',
-    href: 'https://linkedin.com',
+    label: "LinkedIn",
+    value: "/in/Stephen James",
+    href: "https://www.linkedin.com/in/stephen-james-215907322",
   },
   {
     icon: MessageCircle,
-    label: 'WhatsApp',
-    value: '+234 XXX XXX XXXX',
-    href: 'https://wa.me/234XXXXXXXXXX',
+    label: "WhatsApp",
+    value: "+234 813 312 2252",
+    href: "https://wa.me/2348133122252",
   },
 ];
 
@@ -36,9 +45,9 @@ const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -49,15 +58,17 @@ const ContactSection = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: 'Message sent!',
+      title: "Message sent!",
       description: "Thanks for reaching out. I'll get back to you soon.",
     });
 
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
@@ -67,12 +78,14 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 md:py-32 relative bg-card/30">
       <div className="absolute inset-0 grid-pattern opacity-20" />
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="inline-block font-mono text-sm text-primary mb-4">// let's connect</span>
+            <span className="inline-block font-mono text-sm text-primary mb-4">
+              // let's connect
+            </span>
             <h2 className="section-heading">Get In Touch</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
               Let's build, deploy, and scale your next product together.
@@ -83,10 +96,13 @@ const ContactSection = () => {
             {/* Contact Info */}
             <div>
               <div className="glass-card glow-border p-8 mb-8">
-                <h3 className="text-xl font-semibold mb-6">Ready to Start a Project?</h3>
+                <h3 className="text-xl font-semibold mb-6">
+                  Ready to Start a Project?
+                </h3>
                 <p className="text-muted-foreground mb-8">
-                  Whether you need a stunning web application, want to set up your DevOps pipeline, 
-                  or migrate to the cloud — I'm here to help. Let's discuss your project.
+                  Whether you need a stunning web application, want to set up
+                  your DevOps pipeline, or migrate to the cloud — I'm here to
+                  help. Let's discuss your project.
                 </p>
 
                 {/* Quick Info */}
@@ -115,7 +131,9 @@ const ContactSection = () => {
                         <link.icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm text-muted-foreground">{link.label}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {link.label}
+                        </div>
                         <div className="font-medium">{link.value}</div>
                       </div>
                       <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
@@ -130,7 +148,10 @@ const ContactSection = () => {
               <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Name
                   </label>
                   <Input
@@ -145,7 +166,10 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Email
                   </label>
                   <Input
@@ -160,7 +184,10 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Message
                   </label>
                   <Textarea
