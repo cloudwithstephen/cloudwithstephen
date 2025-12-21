@@ -6,105 +6,105 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 20% 10%;
+    --background: 220 20% 98%;
+    --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 220 25% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 185 80% 40%;
+    --primary: 220 90% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 93%;
-    --secondary-foreground: 220 20% 15%;
+    --secondary: 220 20% 93%;
+    --secondary-foreground: 220 25% 15%;
 
-    --muted: 210 15% 90%;
-    --muted-foreground: 215 15% 40%;
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 15% 40%;
 
-    --accent: 155 70% 40%;
+    --accent: 200 85% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 185 80% 40%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 90% 55%;
 
     --radius: 0.75rem;
 
     /* Custom design tokens - Light */
-    --glow-primary: 185 80% 40%;
-    --glow-accent: 155 70% 40%;
-    --gradient-start: 185 80% 40%;
-    --gradient-end: 155 70% 40%;
+    --glow-primary: 220 90% 55%;
+    --glow-accent: 200 85% 50%;
+    --gradient-start: 220 90% 55%;
+    --gradient-end: 200 85% 50%;
     --glass-bg: 0 0% 100%;
-    --glass-border: 210 20% 85%;
+    --glass-border: 220 20% 85%;
     --terminal-bg: 220 20% 96%;
-    --terminal-green: 120 60% 35%;
-    --grid-color: 210 15% 90%;
+    --terminal-green: 220 80% 50%;
+    --grid-color: 220 15% 90%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 220 20% 20%;
-    --sidebar-primary: 185 80% 40%;
+    --sidebar-foreground: 220 25% 20%;
+    --sidebar-primary: 220 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 20% 95%;
-    --sidebar-accent-foreground: 220 20% 15%;
-    --sidebar-border: 210 20% 88%;
-    --sidebar-ring: 185 80% 40%;
+    --sidebar-accent: 220 20% 95%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 220 20% 88%;
+    --sidebar-ring: 220 90% 55%;
   }
 
   .dark {
-    --background: 220 20% 6%;
-    --foreground: 210 20% 95%;
+    --background: 222 25% 8%;
+    --foreground: 220 20% 95%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 210 20% 95%;
+    --card: 222 25% 12%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 222 25% 12%;
+    --popover-foreground: 220 20% 95%;
 
-    --primary: 185 80% 50%;
-    --primary-foreground: 220 20% 6%;
+    --primary: 220 90% 60%;
+    --primary-foreground: 222 25% 8%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 210 20% 85%;
+    --secondary: 222 20% 16%;
+    --secondary-foreground: 220 20% 85%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 222 20% 20%;
+    --muted-foreground: 220 15% 55%;
 
-    --accent: 155 70% 45%;
-    --accent-foreground: 220 20% 6%;
+    --accent: 200 85% 55%;
+    --accent-foreground: 222 25% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 185 80% 50%;
+    --border: 222 20% 22%;
+    --input: 222 20% 22%;
+    --ring: 220 90% 60%;
 
     /* Custom design tokens - Dark */
-    --glow-primary: 185 80% 50%;
-    --glow-accent: 155 70% 45%;
-    --gradient-start: 185 80% 50%;
-    --gradient-end: 155 70% 45%;
-    --glass-bg: 220 20% 12%;
-    --glass-border: 220 15% 25%;
-    --terminal-bg: 220 25% 8%;
-    --terminal-green: 120 60% 60%;
-    --grid-color: 220 15% 15%;
+    --glow-primary: 220 90% 60%;
+    --glow-accent: 200 85% 55%;
+    --gradient-start: 220 90% 60%;
+    --gradient-end: 200 85% 55%;
+    --glass-bg: 222 25% 14%;
+    --glass-border: 222 20% 28%;
+    --terminal-bg: 222 30% 10%;
+    --terminal-green: 200 85% 55%;
+    --grid-color: 222 20% 18%;
 
-    --sidebar-background: 220 20% 8%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 185 80% 50%;
-    --sidebar-primary-foreground: 220 20% 6%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 185 80% 50%;
+    --sidebar-background: 222 25% 10%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 220 90% 60%;
+    --sidebar-primary-foreground: 222 25% 8%;
+    --sidebar-accent: 222 20% 16%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 222 20% 22%;
+    --sidebar-ring: 220 90% 60%;
   }
 }
 
