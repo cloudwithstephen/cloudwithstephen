@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Github,
@@ -13,6 +14,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+
+// TODO: Replace these with your EmailJS credentials from https://www.emailjs.com/
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // e.g., "service_xxxxxxx"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // e.g., "template_xxxxxxx"
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // e.g., "XXXXXXXXXXXXXXX"
 
 const contactLinks = [
   {
@@ -47,6 +53,7 @@ const contactLinks = [
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -57,17 +64,45 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!formRef.current) return;
+    
+    // Validate inputs
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Missing fields",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -155,6 +190,7 @@ const ContactSection = () => {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-50" />
               <form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className="relative p-8 md:p-10 rounded-3xl bg-card/80 backdrop-blur-xl border border-border/50"
               >
@@ -165,12 +201,14 @@ const ContactSection = () => {
                     </label>
                     <Input
                       type="text"
+                      name="from_name"
                       placeholder="John Doe"
                       value={formData.name}
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
                       required
+                      maxLength={100}
                       className="h-12 bg-background/50 border-border/50 focus:border-primary/50 rounded-xl"
                     />
                   </div>
@@ -180,12 +218,14 @@ const ContactSection = () => {
                     </label>
                     <Input
                       type="email"
+                      name="from_email"
                       placeholder="john@example.com"
                       value={formData.email}
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
                       required
+                      maxLength={255}
                       className="h-12 bg-background/50 border-border/50 focus:border-primary/50 rounded-xl"
                     />
                   </div>
@@ -197,12 +237,14 @@ const ContactSection = () => {
                   </label>
                   <Input
                     type="text"
+                    name="subject"
                     placeholder="Project Collaboration / Job Opportunity"
                     value={formData.subject}
                     onChange={(e) =>
                       setFormData({ ...formData, subject: e.target.value })
                     }
                     required
+                    maxLength={200}
                     className="h-12 bg-background/50 border-border/50 focus:border-primary/50 rounded-xl"
                   />
                 </div>
@@ -212,6 +254,7 @@ const ContactSection = () => {
                     Your Message
                   </label>
                   <Textarea
+                    name="message"
                     placeholder="Tell me about your project, timeline, and goals..."
                     value={formData.message}
                     onChange={(e) =>
@@ -219,6 +262,7 @@ const ContactSection = () => {
                     }
                     required
                     rows={5}
+                    maxLength={2000}
                     className="bg-background/50 border-border/50 focus:border-primary/50 rounded-xl resize-none"
                   />
                 </div>
