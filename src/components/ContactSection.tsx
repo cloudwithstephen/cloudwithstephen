@@ -16,9 +16,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 // TODO: Replace these with your EmailJS credentials from https://www.emailjs.com/
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // e.g., "service_xxxxxxx"
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // e.g., "template_xxxxxxx"
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // e.g., "XXXXXXXXXXXXXXX"
+const EMAILJS_SERVICE_ID = "service_eujwij9"; // e.g., "service_xxxxxxx"
+const EMAILJS_TEMPLATE_ID = "template_z0samzh"; // e.g., "template_xxxxxxx"
+const EMAILJS_PUBLIC_KEY = "Bj-s7E_G9IWYJerCR"; // e.g., "XXXXXXXXXXXXXXX"
 
 const contactLinks = [
   {
@@ -64,11 +64,15 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formRef.current) return;
-    
+
     // Validate inputs
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
       toast({
         title: "Missing fields",
         description: "Please fill in all required fields.",
@@ -97,7 +101,8 @@ const ContactSection = () => {
       console.error("EmailJS error:", error);
       toast({
         title: "Failed to send",
-        description: "Something went wrong. Please try again or contact me directly.",
+        description:
+          "Something went wrong. Please try again or contact me directly.",
         variant: "destructive",
       });
     } finally {
@@ -115,7 +120,9 @@ const ContactSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="text-sm font-medium text-primary">Get In Touch</span>
+            <span className="text-sm font-medium text-primary">
+              Get In Touch
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Let's Build Something{" "}
@@ -124,8 +131,8 @@ const ContactSection = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Have a project in mind or want to discuss opportunities?
-            I'm always excited to collaborate on innovative ideas.
+            Have a project in mind or want to discuss opportunities? I'm always
+            excited to collaborate on innovative ideas.
           </p>
         </div>
 
@@ -152,7 +159,9 @@ const ContactSection = () => {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Availability</p>
+                    <p className="text-sm text-muted-foreground">
+                      Availability
+                    </p>
                     <p className="font-medium">Open for freelance</p>
                   </div>
                 </div>
@@ -175,7 +184,9 @@ const ContactSection = () => {
                   <div className="flex items-center gap-4">
                     <link.icon className={`w-5 h-5 ${link.color}`} />
                     <div>
-                      <p className="text-sm text-muted-foreground">{link.label}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {link.label}
+                      </p>
                       <p className="font-medium">{link.value}</p>
                     </div>
                   </div>
@@ -286,7 +297,8 @@ const ContactSection = () => {
                 </Button>
 
                 <p className="text-center text-sm text-muted-foreground mt-4">
-                  I'll respond within 24 hours. Looking forward to hearing from you!
+                  I'll respond within 24 hours. Looking forward to hearing from
+                  you!
                 </p>
               </form>
             </div>
