@@ -3,7 +3,7 @@ import { Play, Youtube, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 // Just paste your full YouTube URL here - it will extract the video ID automatically
-const YOUTUBE_URL = "https://www.youtube.com/watch?v=YOUR_VIDEO_ID";
+const YOUTUBE_URL = "https://youtu.be/D_KSR3S6W8I?si=KmI42d5-ugQUuByF";
 const VIDEO_TITLE = "My Brand Video";
 const CHANNEL_URL = "https://youtube.com/@cloudwithstephen";
 
@@ -11,9 +11,9 @@ const CHANNEL_URL = "https://youtube.com/@cloudwithstephen";
 const getYouTubeId = (url: string): string => {
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-    /^([a-zA-Z0-9_-]{11})$/
+    /^([a-zA-Z0-9_-]{11})$/,
   ];
-  
+
   for (const pattern of patterns) {
     const match = url.match(pattern);
     if (match) return match[1];
@@ -31,18 +31,18 @@ const VideoSection = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.span 
+            <motion.span
               className="inline-block font-mono text-sm text-primary mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -66,7 +66,7 @@ const VideoSection = () => {
           >
             {/* Glow Effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
-            
+
             {/* Video Container */}
             <div className="relative rounded-2xl overflow-hidden bg-card border border-border/50 shadow-2xl">
               <div className="relative aspect-video">
@@ -78,10 +78,12 @@ const VideoSection = () => {
                       alt={VIDEO_TITLE}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                        (
+                          e.target as HTMLImageElement
+                        ).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
                       }}
                     />
-                    
+
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px] flex items-center justify-center">
                       <motion.button
@@ -93,17 +95,22 @@ const VideoSection = () => {
                         {/* Pulse rings */}
                         <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
                         <span className="absolute -inset-4 rounded-full bg-primary/20 animate-pulse" />
-                        
+
                         {/* Play button */}
                         <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/30">
-                          <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
+                          <Play
+                            className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1"
+                            fill="currentColor"
+                          />
                         </div>
                       </motion.button>
                     </div>
-                    
+
                     {/* Video Title Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
-                      <h3 className="text-xl md:text-2xl font-semibold text-foreground">{VIDEO_TITLE}</h3>
+                      <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+                        {VIDEO_TITLE}
+                      </h3>
                     </div>
                   </>
                 ) : (
@@ -120,7 +127,7 @@ const VideoSection = () => {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +145,7 @@ const VideoSection = () => {
               <Youtube className="w-5 h-5" />
               Subscribe
             </motion.a>
-            
+
             <motion.a
               href={`https://youtube.com/watch?v=${videoId}`}
               target="_blank"
