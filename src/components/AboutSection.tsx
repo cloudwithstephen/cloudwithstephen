@@ -3,21 +3,21 @@ import { Code2, Cloud, Cog, Zap, BookOpen, Target } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Front-End Expert",
+    title: "Clean, Fast Interfaces",
     description:
-      "Strong foundations in HTML, CSS, JavaScript, and React with a focus on clean, maintainable code.",
+      "User experiences that load quickly, work reliably, and help your customers get things done.",
   },
   {
     icon: Cloud,
-    title: "Cloud Native",
+    title: "Scalable Infrastructure",
     description:
-      "Building and deploying applications using modern cloud infrastructure and services.",
+      "Cloud systems designed to grow with your business—without surprise costs or downtime.",
   },
   {
     icon: Cog,
-    title: "DevOps Mindset",
+    title: "Less Manual Work",
     description:
-      "Automating workflows, CI/CD pipelines, and infrastructure to ship faster and safer.",
+      "Automation that handles repetitive tasks, so your team can focus on what matters.",
   },
 ];
 
@@ -37,9 +37,12 @@ const AboutSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <span className="inline-block font-mono text-sm text-primary mb-4">
-              // about me
+              // what I do
             </span>
-            <h2 className="section-heading">Building the Future of Web</h2>
+            <h2 className="section-heading">Outcomes, Not Just Skills</h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              Real systems built for eCommerce platforms, business management tools, and growing startups.
+            </p>
           </div>
 
           {/* Main Content */}
