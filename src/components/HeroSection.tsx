@@ -1,4 +1,4 @@
-import { ArrowRight, Download, Github } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -27,25 +27,23 @@ const HeroSection = () => {
 
             {/* Main Headline */}
             <div className="space-y-2">
-              <p className="text-lg sm:text-xl text-muted-foreground">Hi, I'm</p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
-                Stephen
+                CloudWithStephen
               </h1>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl font-medium text-primary">
-                <span>Front-End Developer</span>
-                <span className="text-muted-foreground">•</span>
-                <span>DevOps Engineer</span>
-              </div>
+              <p className="text-lg sm:text-xl md:text-2xl font-medium text-primary">
+                Helping businesses build reliable systems that scale
+              </p>
             </div>
 
-            {/* Tagline */}
+            {/* Value Proposition */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              I build <span className="text-foreground font-medium">scalable web experiences</span> and 
-              automate <span className="text-foreground font-medium">cloud infrastructure</span> for 
-              modern applications.
+              I combine <span className="text-foreground font-medium">frontend engineering</span>, 
+              <span className="text-foreground font-medium"> cloud infrastructure</span>, and 
+              <span className="text-foreground font-medium"> automation</span> to help teams 
+              ship faster and operate with confidence.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Simplified */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <Button 
                 size="lg" 
@@ -53,7 +51,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="#projects">
-                  View My Work
+                  See How I Work
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -64,18 +62,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="#contact">
-                  Let's Talk
-                </a>
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="lg" 
-                className="w-full sm:w-auto px-6 py-5 sm:py-6 text-base sm:text-lg"
-                asChild
-              >
-                <a href="/resume.pdf" download>
-                  <Download className="w-5 h-5 mr-2" />
-                  Resume
+                  Work With Me
                 </a>
               </Button>
             </div>
