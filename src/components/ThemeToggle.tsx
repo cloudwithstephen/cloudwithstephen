@@ -13,8 +13,8 @@ const ThemeToggle = () => {
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" className="w-9 h-9">
-        <Sun className="w-4 h-4" />
+      <Button variant="ghost" size="icon" className="w-8 h-8 sm:w-9 sm:h-9">
+        <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
       </Button>
     );
   }
@@ -24,13 +24,13 @@ const ThemeToggle = () => {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="w-9 h-9"
+      className="w-8 h-8 sm:w-9 sm:h-9"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <Sun className="w-4 h-4 transition-transform hover:rotate-45" />
+        <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform hover:rotate-45" />
       ) : (
-        <Moon className="w-4 h-4 transition-transform hover:-rotate-12" />
+        <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform hover:-rotate-12" />
       )}
     </Button>
   );
