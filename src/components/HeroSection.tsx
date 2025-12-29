@@ -37,16 +37,27 @@ const HeroSection = () => {
 
             {/* Value Proposition */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              I combine <span className="text-foreground font-medium">frontend engineering</span>, 
-              <span className="text-foreground font-medium"> cloud infrastructure</span>, and 
-              <span className="text-foreground font-medium"> automation</span> to help teams 
-              ship faster and operate with confidence.
+              I combine{" "}
+              <span className="text-foreground font-medium">
+                frontend engineering
+              </span>
+              ,
+              <span className="text-foreground font-medium">
+                {" "}
+                cloud infrastructure
+              </span>
+              , and
+              <span className="text-foreground font-medium">
+                {" "}
+                automation
+              </span>{" "}
+              to help teams ship faster and operate with confidence.
             </p>
 
             {/* CTA Buttons - Simplified */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="w-full sm:w-auto group px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg bg-primary hover:bg-primary/90"
                 asChild
               >
@@ -55,15 +66,13 @@ const HeroSection = () => {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg border-2"
                 asChild
               >
-                <a href="#contact">
-                  Work With Me
-                </a>
+                <a href="#contact">Work With Me</a>
               </Button>
             </div>
 
@@ -91,10 +100,12 @@ const HeroSection = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
-                <span className="text-xs text-muted-foreground font-mono">stephen@cloud ~ </span>
+                <span className="text-xs text-muted-foreground font-mono">
+                  stephen@cloud ~{" "}
+                </span>
                 <div className="w-16" />
               </div>
-              
+
               {/* Terminal Content */}
               <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm text-left space-y-3 bg-card">
                 <div className="flex items-start gap-2">
@@ -119,15 +130,25 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
                 <p className="text-xl sm:text-2xl font-bold text-primary">3+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">Years Exp</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  Years Exp
+                </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-primary">15+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">Projects</p>
+                <p className="text-xl sm:text-2xl font-bold text-primary">
+                  10+
+                </p>
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  Projects
+                </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-primary">100%</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">Committed</p>
+                <p className="text-xl sm:text-2xl font-bold text-primary">
+                  100%
+                </p>
+                <p className="text-xs sm:text-sm text-muted-foreground">
+                  Committed
+                </p>
               </div>
             </div>
           </div>
