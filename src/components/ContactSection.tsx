@@ -14,11 +14,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
-// TODO: Replace these with your EmailJS credentials from https://www.emailjs.com/
-const EMAILJS_SERVICE_ID = "service_eujwij9"; // e.g., "service_xxxxxxx"
-const EMAILJS_TEMPLATE_ID = "template_z0samzh"; // e.g., "template_xxxxxxx"
-const EMAILJS_PUBLIC_KEY = "Bj-s7E_G9IWYJerCR"; // e.g., "XXXXXXXXXXXXXXX"
+const EMAILJS_SERVICE_ID = "service_eujwij9";
+const EMAILJS_TEMPLATE_ID = "template_z0samzh";
+const EMAILJS_PUBLIC_KEY = "Bj-s7E_G9IWYJerCR";
 
 const contactLinks = [
   {
@@ -51,6 +51,21 @@ const contactLinks = [
   },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const ContactSection = () => {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
@@ -67,7 +82,6 @@ const ContactSection = () => {
 
     if (!formRef.current) return;
 
-    // Validate inputs
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -118,7 +132,14 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <span className="text-sm font-medium text-primary">
               Get In Touch
@@ -134,13 +155,19 @@ const ContactSection = () => {
             Have a project in mind or want to discuss opportunities? I'm always
             excited to collaborate on innovative ideas.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {/* Contact Info Side */}
-          <div className="lg:col-span-2 space-y-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="lg:col-span-2 space-y-8"
+          >
             {/* Quick Info Cards */}
-            <div className="space-y-4">
+            <motion.div variants={fadeInUp} className="space-y-4">
               <div className="group p-5 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300">
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-primary/10 text-primary">
@@ -166,19 +193,24 @@ const ContactSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Contact Links */}
-            <div className="space-y-3">
+            <motion.div variants={fadeInUp} className="space-y-3">
               <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-4">
                 Connect With Me
               </h3>
-              {contactLinks.map((link) => (
-                <a
+              {contactLinks.map((link, index) => (
+                <motion.a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ x: 5 }}
                   className="group flex items-center justify-between p-4 rounded-xl bg-card/30 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:bg-card/50 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
@@ -191,13 +223,20 @@ const ContactSection = () => {
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </a>
+                </motion.a>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-3">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="lg:col-span-3"
+          >
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-50" />
               <form
@@ -302,7 +341,7 @@ const ContactSection = () => {
                 </p>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

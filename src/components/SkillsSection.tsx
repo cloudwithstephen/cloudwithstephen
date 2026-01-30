@@ -1,9 +1,6 @@
 import { 
   Code2, 
   Layout, 
-  Palette, 
-  Smartphone,
-  GitBranch,
   Container,
   Terminal,
   Server,
@@ -13,6 +10,7 @@ import {
   Activity,
   Settings
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
@@ -59,6 +57,20 @@ const skillCategories = [
   },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const SkillsSection = () => {
   return (
@@ -68,19 +80,34 @@ const SkillsSection = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
             <span className="inline-block font-mono text-sm text-primary mb-4">// skills & expertise</span>
             <h2 className="section-heading">Technical Arsenal</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               A comprehensive toolkit spanning front-end development, DevOps practices, and cloud infrastructure.
             </p>
-          </div>
+          </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skillCategories.map((category, categoryIndex) => (
-              <div
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {skillCategories.map((category) => (
+              <motion.div
                 key={category.title}
+                variants={fadeInUp}
+                transition={{ duration: 0.4 }}
                 className="glass-card glow-border p-6 hover:bg-card/70 transition-all duration-300"
               >
                 {/* Category Header */}
@@ -93,19 +120,19 @@ const SkillsSection = () => {
 
                 {/* Skills List */}
                 <div className="space-y-4 mb-6">
-                  {category.skills.map((skill, skillIndex) => (
+                  {category.skills.map((skill) => (
                     <div key={skill.name}>
                       <div className="flex justify-between items-center mb-1.5">
                         <span className="text-sm font-medium">{skill.name}</span>
                         <span className="text-xs text-muted-foreground">{skill.level}%</span>
                       </div>
                       <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-                        <div
-                          className={`h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-1000 ease-out`}
-                          style={{ 
-                            width: `${skill.level}%`,
-                            animationDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`
-                          }}
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, ease: "easeOut" }}
+                          className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
                         />
                       </div>
                     </div>
@@ -120,17 +147,29 @@ const SkillsSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Tools & Technologies */}
-          <div className="mt-16 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-16 text-center"
+          >
             <h3 className="text-lg font-semibold mb-6">Tools & Technologies</h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="flex flex-wrap justify-center gap-4"
+            >
               {[
                 { icon: Code2, label: 'VS Code' },
-                { icon: GitBranch, label: 'Git' },
                 { icon: Container, label: 'Docker' },
                 { icon: Terminal, label: 'Terminal' },
                 { icon: Server, label: 'Nginx' },
@@ -140,16 +179,19 @@ const SkillsSection = () => {
                 { icon: Activity, label: 'Monitoring' },
                 { icon: Layout, label: 'Figma' },
               ].map((tool) => (
-                <div
+                <motion.div
                   key={tool.label}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.05 }}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 cursor-default"
                 >
                   <tool.icon className="w-4 h-4 text-primary" />
                   <span className="text-sm">{tool.label}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

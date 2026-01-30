@@ -1,5 +1,6 @@
-import { ExternalLink, Github, ArrowUpRight, Server, Cloud, Workflow } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight, Cloud, Workflow } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -60,6 +61,21 @@ const projects = [
   },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const ProjectsSection = () => {
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
@@ -71,19 +87,31 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
             <span className="inline-block font-mono text-sm text-primary mb-4">// featured work</span>
             <h2 className="section-heading">Projects & Deployments</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               A showcase of real-world projects highlighting both development skills and DevOps practices.
             </p>
-          </div>
+          </motion.div>
 
           {/* Featured Projects */}
           <div className="space-y-12 mb-16">
             {featuredProjects.map((project, index) => (
-              <div
+              <motion.div
                 key={project.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={fadeInUp}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`glass-card glow-border overflow-hidden group ${
                   index % 2 === 0 ? '' : 'lg:flex-row-reverse'
                 }`}
@@ -141,16 +169,34 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Other Projects Grid */}
-          <h3 className="text-xl font-semibold mb-8 text-center">More Projects</h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <motion.h3
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.4 }}
+            className="text-xl font-semibold mb-8 text-center"
+          >
+            More Projects
+          </motion.h3>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 gap-6"
+          >
             {otherProjects.map((project) => (
-              <div
+              <motion.div
                 key={project.title}
+                variants={fadeInUp}
+                transition={{ duration: 0.4 }}
+                whileHover={{ y: -5 }}
                 className="glass-card glow-border p-6 group hover:bg-card/70 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-4">
@@ -189,19 +235,26 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* View All Button */}
-          <div className="text-center mt-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="text-center mt-12"
+          >
             <Button variant="outline" size="lg" asChild>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5" />
                 View All on GitHub
               </a>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
