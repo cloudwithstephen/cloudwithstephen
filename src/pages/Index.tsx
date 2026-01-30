@@ -4,7 +4,6 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import VideoSection from '@/components/VideoSection';
 import WorkflowSection from '@/components/WorkflowSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ContactSection from '@/components/ContactSection';
@@ -14,33 +13,33 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Stephen | Front-End Developer & DevOps Cloud Engineer | cloudwithstephen</title>
+        <title>CWS | CloudWithStephen - Frontend, DevOps & Cloud Engineer</title>
         <meta
           name="description"
-          content="Stephen is a Front-End Developer transitioning to DevOps & Cloud Engineering. Expert in React, TypeScript, AWS, Docker, and CI/CD pipelines. Available for hire."
+          content="CWS (CloudWithStephen) helps businesses build reliable systems that scale. Expert in React, TypeScript, AWS, Docker, and CI/CD pipelines."
         />
         <meta
           name="keywords"
-          content="cloudwithstephen, stephen developer, front-end developer, devops engineer, cloud engineer, react developer, aws, docker, ci/cd, portfolio, web developer nigeria"
+          content="CWS, CloudWithStephen, cloud with stephen, frontend developer, devops engineer, cloud engineer, react developer, aws, docker, ci/cd, portfolio"
         />
-        <meta name="author" content="Stephen - cloudwithstephen" />
+        <meta name="author" content="Stephen - CWS CloudWithStephen" />
         <meta name="robots" content="index, follow" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Stephen | Front-End Developer & DevOps Cloud Engineer" />
+        <meta property="og:title" content="CWS | CloudWithStephen - Frontend, DevOps & Cloud Engineer" />
         <meta
           property="og:description"
-          content="Building scalable web experiences and automating cloud infrastructure. Available for freelance and full-time opportunities."
+          content="Helping businesses build reliable systems that scale. Frontend engineering, cloud infrastructure, and automation."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.cloudwithstephen.com" />
-        <meta property="og:site_name" content="cloudwithstephen" />
+        <meta property="og:site_name" content="CWS - CloudWithStephen" />
         <meta property="og:locale" content="en_US" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Stephen | Front-End Developer & DevOps Cloud Engineer" />
-        <meta name="twitter:description" content="Building scalable web experiences and automating cloud infrastructure." />
+        <meta name="twitter:title" content="CWS | CloudWithStephen - Frontend, DevOps & Cloud Engineer" />
+        <meta name="twitter:description" content="Helping businesses build reliable systems that scale." />
         
         {/* Canonical */}
         <link rel="canonical" href="https://www.cloudwithstephen.com" />
@@ -50,10 +49,10 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Stephen",
+            "name": "Stephen (CWS - CloudWithStephen)",
             "url": "https://www.cloudwithstephen.com",
-            "jobTitle": "Front-End Developer & DevOps Cloud Engineer",
-            "description": "Front-End Developer transitioning to DevOps & Cloud Engineering. Expert in React, TypeScript, AWS, Docker, and CI/CD.",
+            "jobTitle": "Frontend Developer & DevOps Cloud Engineer",
+            "description": "CWS helps businesses build reliable systems that scale through frontend engineering, cloud infrastructure, and automation.",
             "sameAs": [
               "https://github.com/cloudwithstephen",
               "https://linkedin.com/in/cloudwithstephen"
@@ -68,7 +67,6 @@ const Index = () => {
         <main>
           <HeroSection />
           <AboutSection />
-          <VideoSection />
           <SkillsSection />
           <ProjectsSection />
           <WorkflowSection />
