@@ -1,4 +1,5 @@
 import { Code2, Cloud, Cog, Zap, BookOpen, Target } from "lucide-react";
+import { motion } from "framer-motion";
 
 const highlights = [
   {
@@ -27,6 +28,21 @@ const traits = [
   { icon: BookOpen, label: "Continuous Learner" },
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 md:py-32 relative">
@@ -35,7 +51,14 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
             <span className="inline-block font-mono text-sm text-primary mb-4">
               // what I do
             </span>
@@ -43,12 +66,19 @@ const AboutSection = () => {
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               Real systems built for eCommerce platforms, business management tools, and growing startups.
             </p>
-          </div>
+          </motion.div>
 
           {/* Main Content */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
             {/* Text Content */}
-            <div className="space-y-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="space-y-6"
+            >
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a{" "}
                 <span className="text-foreground font-medium">
@@ -76,25 +106,36 @@ const AboutSection = () => {
 
               {/* Traits */}
               <div className="flex flex-wrap gap-3 pt-4">
-                {traits.map((trait) => (
-                  <div
+                {traits.map((trait, index) => (
+                  <motion.div
                     key={trait.label}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
                     className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border"
                   >
                     <trait.icon className="w-4 h-4 text-primary" />
                     <span className="text-sm font-medium">{trait.label}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Highlights Cards */}
-            <div className="space-y-4">
-              {highlights.map((item, index) => (
-                <div
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+              className="space-y-4"
+            >
+              {highlights.map((item) => (
+                <motion.div
                   key={item.title}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.4 }}
                   className="glass-card glow-border p-6 group hover:bg-card/70 transition-all duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
@@ -109,29 +150,40 @@ const AboutSection = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border"
+          >
             {[
               { value: "3+", label: "Years Experience" },
               { value: "5+", label: "Projects Completed" },
               { value: "5+", label: "Happy Clients" },
               { value: "100%", label: "Commitment" },
             ].map((stat) => (
-              <div key={stat.label} className="text-center">
+              <motion.div
+                key={stat.label}
+                variants={fadeInUp}
+                transition={{ duration: 0.4 }}
+                className="text-center"
+              >
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">
                   {stat.label}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
