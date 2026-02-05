@@ -27,13 +27,6 @@
 
 ---
 
-📈 **GitHub Stats**
-
-<img src="https://github-readme-stats.vercel.app/api?username=cloudwithstephen&show_icons=true&theme=tokyonight" height="150" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cloudwithstephen&layout=compact&theme=tokyonight" height="150" />
-
----
-
 🌐 **Links**
 - 📺 YouTube: **CloudWithStephen**
 - 🌍 Portfolio: *cloudwithstephen.com*
