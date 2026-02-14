@@ -21,7 +21,7 @@ const HeroSection = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-sm font-medium text-foreground/80">
-                Open to opportunities
+                Accepting new projects
               </span>
             </div>
 
@@ -31,30 +31,28 @@ const HeroSection = () => {
                 CloudWithStephen
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl font-medium text-primary">
-                Helping businesses build reliable systems that scale
+                We build reliable systems that scale your business
               </p>
             </div>
 
             {/* Value Proposition */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              I combine{" "}
+              A full-service digital agency specializing in{" "}
               <span className="text-foreground font-medium">
-                frontend engineering
+                web development
               </span>
-              ,
+              ,{" "}
               <span className="text-foreground font-medium">
-                {" "}
                 cloud infrastructure
               </span>
-              , and
+              , and{" "}
               <span className="text-foreground font-medium">
-                {" "}
-                automation
-              </span>{" "}
-              to help teams ship faster and operate with confidence.
+                DevOps automation
+              </span>
+              . We help teams ship faster and operate with confidence.
             </p>
 
-            {/* CTA Buttons - Simplified */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <Button
                 size="lg"
@@ -62,7 +60,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="#projects">
-                  See How I Work
+                  See Our Work
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -72,7 +70,7 @@ const HeroSection = () => {
                 className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg border-2"
                 asChild
               >
-                <a href="#contact">Work With Me</a>
+                <a href="#contact">Get a Quote</a>
               </Button>
             </div>
 
@@ -101,7 +99,7 @@ const HeroSection = () => {
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
                 <span className="text-xs text-muted-foreground font-mono">
-                  stephen@cloud ~{" "}
+                  cws@agency ~{" "}
                 </span>
                 <div className="w-16" />
               </div>
@@ -114,10 +112,10 @@ const HeroSection = () => {
                   <span className="text-foreground">cloudwithstephen</span>
                 </div>
                 <div className="pl-4 sm:pl-6 space-y-1.5 text-muted-foreground">
-                  <p>✓ Building responsive UIs with React & TypeScript</p>
-                  <p>✓ Deploying to AWS, Docker & Kubernetes</p>
-                  <p>✓ Automating with CI/CD pipelines</p>
-                  <p>✓ Managing cloud infrastructure</p>
+                  <p>✓ Web apps with React, TypeScript & Next.js</p>
+                  <p>✓ Cloud deployments on AWS & Docker</p>
+                  <p>✓ CI/CD pipelines & DevOps automation</p>
+                  <p>✓ Infrastructure management & monitoring</p>
                 </div>
                 <div className="flex items-center gap-2 pt-2">
                   <span className="text-primary">→</span>
@@ -131,15 +129,15 @@ const HeroSection = () => {
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
                 <p className="text-xl sm:text-2xl font-bold text-primary">3+</p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Years Exp
+                  Years Active
                 </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
                 <p className="text-xl sm:text-2xl font-bold text-primary">
-                  10+
+                  15+
                 </p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Projects
+                  Projects Delivered
                 </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
@@ -147,7 +145,7 @@ const HeroSection = () => {
                   100%
                 </p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Committed
+                  Client Satisfaction
                 </p>
               </div>
             </div>

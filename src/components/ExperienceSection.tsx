@@ -3,15 +3,28 @@ import { Briefcase, GraduationCap, Award, Calendar, MapPin, ArrowUpRight } from 
 const experiences = [
   {
     type: 'work',
-    title: 'Freelance Front-End Developer',
+    title: 'Agency Founded — CWS',
+    company: 'CloudWithStephen',
+    location: 'Remote / Lagos',
+    period: '2023 - Present',
+    description: 'Launched CloudWithStephen as a full-service digital agency delivering web development, cloud infrastructure, and DevOps automation for businesses.',
+    highlights: [
+      'Delivered 15+ client projects across eCommerce, SaaS, and startups',
+      'Built automated deployment pipelines for every project',
+      'Achieved 100% client satisfaction rate',
+    ],
+  },
+  {
+    type: 'work',
+    title: 'Freelance Developer & Cloud Engineer',
     company: 'Self-Employed',
     location: 'Remote',
-    period: '2022 - Present',
-    description: 'Building custom web applications and landing pages for clients worldwide. Implemented modern CI/CD practices and cloud deployments.',
+    period: '2022 - 2023',
+    description: 'Built custom web applications and set up cloud infrastructure for clients. Laid the foundation for what became CWS.',
     highlights: [
-      'Delivered 15+ client projects on time and budget',
-      'Implemented automated deployment pipelines',
-      'Achieved 95% client satisfaction rate',
+      'Built production-ready apps with React & TypeScript',
+      'Set up Docker, CI/CD, and AWS deployments for clients',
+      'Reduced client deployment time by 40% with automation',
     ],
   },
   {
@@ -20,24 +33,11 @@ const experiences = [
     company: 'Tech Startup',
     location: 'Lagos, Nigeria',
     period: '2021 - 2022',
-    description: 'Contributed to the development of web applications using React and Node.js. Collaborated with senior developers on DevOps initiatives.',
+    description: 'Contributed to web applications using React and Node.js. First exposure to DevOps and cloud workflows.',
     highlights: [
       'Built reusable component libraries',
-      'Reduced deployment time by 40% with automation',
+      'Introduced automated testing practices',
       'Mentored interns on React best practices',
-    ],
-  },
-  {
-    type: 'education',
-    title: 'Computer Science',
-    company: 'University',
-    location: 'Nigeria',
-    period: '2018 - 2022',
-    description: 'Bachelor\'s degree with focus on software engineering and web technologies.',
-    highlights: [
-      'Graduated with honors',
-      'Led university tech club',
-      'Built student management system as final project',
     ],
   },
 ];
@@ -58,10 +58,10 @@ const ExperienceSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="inline-block font-mono text-sm text-primary mb-4">// journey so far</span>
-            <h2 className="section-heading">Experience & Learning</h2>
+            <span className="inline-block font-mono text-sm text-primary mb-4">// our track record</span>
+            <h2 className="section-heading">Experience & Credentials</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A blend of professional experience, continuous learning, and hands-on project work.
+              From freelancing to founding CWS—our journey of building reliable systems for real businesses.
             </p>
           </div>
 
@@ -70,13 +70,10 @@ const ExperienceSection = () => {
             <div className="lg:col-span-2 space-y-8">
               {experiences.map((exp, index) => (
                 <div key={exp.title + exp.company} className="relative group">
-                  {/* Timeline Line */}
                   {index < experiences.length - 1 && (
                     <div className="absolute left-[19px] top-12 bottom-0 w-0.5 bg-border group-hover:bg-primary/30 transition-colors" />
                   )}
-
                   <div className="flex gap-6">
-                    {/* Icon */}
                     <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
                       exp.type === 'work' 
                         ? 'bg-primary/10 text-primary' 
@@ -88,8 +85,6 @@ const ExperienceSection = () => {
                         <GraduationCap className="w-5 h-5" />
                       )}
                     </div>
-
-                    {/* Content */}
                     <div className="glass-card glow-border p-6 flex-1 hover:bg-card/70 transition-all duration-300">
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
                         <div>
@@ -133,10 +128,7 @@ const ExperienceSection = () => {
                 </div>
                 <div className="space-y-4">
                   {certifications.map((cert) => (
-                    <div
-                      key={cert.name}
-                      className="p-4 rounded-lg bg-secondary/30 border border-border hover:border-primary/30 transition-colors"
-                    >
+                    <div key={cert.name} className="p-4 rounded-lg bg-secondary/30 border border-border hover:border-primary/30 transition-colors">
                       <div className="flex items-start justify-between gap-2">
                         <h4 className="font-medium text-sm">{cert.name}</h4>
                         <span className="text-xs text-muted-foreground">{cert.year}</span>
@@ -152,14 +144,11 @@ const ExperienceSection = () => {
                   ))}
                 </div>
 
-                {/* Learning Focus */}
                 <div className="mt-6 pt-6 border-t border-border">
-                  <h4 className="font-medium text-sm mb-3">Currently Learning</h4>
+                  <h4 className="font-medium text-sm mb-3">Currently Exploring</h4>
                   <div className="flex flex-wrap gap-2">
                     {['Kubernetes', 'Terraform', 'AWS Solutions Architect'].map((topic) => (
-                      <span key={topic} className="skill-badge text-xs">
-                        {topic}
-                      </span>
+                      <span key={topic} className="skill-badge text-xs">{topic}</span>
                     ))}
                   </div>
                 </div>
