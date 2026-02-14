@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: 'Business Landing Pages',
-    description: 'Collection of high-converting landing pages for various clients. Optimized for SEO, performance, and accessibility.',
+    description: 'High-converting landing pages for various clients. Optimized for SEO, performance, and accessibility.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
     tech: ['React', 'Vite', 'Tailwind', 'Framer Motion'],
     devops: 'Vercel deployment, automated builds, performance monitoring',
@@ -51,8 +51,8 @@ const projects = [
     githubUrl: '#',
   },
   {
-    title: 'Portfolio Website',
-    description: 'This very portfolio! Built with modern technologies and deployed using best DevOps practices.',
+    title: 'Agency Portfolio',
+    description: 'Our own agency website—built with modern technologies and deployed using best DevOps practices.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop',
     tech: ['React', 'TypeScript', 'Tailwind', 'Vite'],
     devops: 'Vercel deployment, automated previews, performance optimization',
@@ -95,10 +95,10 @@ const ProjectsSection = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="inline-block font-mono text-sm text-primary mb-4">// featured work</span>
-            <h2 className="section-heading">Projects & Deployments</h2>
+            <span className="inline-block font-mono text-sm text-primary mb-4">// our work</span>
+            <h2 className="section-heading">Projects We've Delivered</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A showcase of real-world projects highlighting both development skills and DevOps practices.
+              Real-world projects showcasing our development, cloud, and DevOps capabilities.
             </p>
           </motion.div>
 
@@ -117,7 +117,6 @@ const ProjectsSection = () => {
                 }`}
               >
                 <div className="grid lg:grid-cols-2 gap-0">
-                  {/* Image */}
                   <div className="relative h-64 lg:h-auto overflow-hidden">
                     <img
                       src={project.image}
@@ -126,8 +125,6 @@ const ProjectsSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent lg:bg-gradient-to-r" />
                   </div>
-
-                  {/* Content */}
                   <div className="p-8 lg:p-10 flex flex-col justify-center">
                     <div className="flex items-center gap-2 mb-4">
                       <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
@@ -136,34 +133,24 @@ const ProjectsSection = () => {
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
                     <p className="text-muted-foreground mb-4">{project.description}</p>
-
-                    {/* DevOps Highlight */}
                     <div className="flex items-start gap-2 p-3 rounded-lg bg-accent/10 border border-accent/20 mb-6">
                       <Cloud className="w-4 h-4 text-accent mt-0.5 shrink-0" />
                       <p className="text-sm text-accent">{project.devops}</p>
                     </div>
-
-                    {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.map((tech) => (
-                        <span key={tech} className="skill-badge text-xs">
-                          {tech}
-                        </span>
+                        <span key={tech} className="skill-badge text-xs">{tech}</span>
                       ))}
                     </div>
-
-                    {/* Links */}
                     <div className="flex gap-3">
                       <Button variant="hero" size="sm" asChild>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          Live Demo
-                          <ExternalLink className="w-4 h-4" />
+                          Live Demo <ExternalLink className="w-4 h-4" />
                         </a>
                       </Button>
                       <Button variant="outline" size="sm" asChild>
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-4 h-4" />
-                          Code
+                          <Github className="w-4 h-4" /> Code
                         </a>
                       </Button>
                     </div>
@@ -173,7 +160,7 @@ const ProjectsSection = () => {
             ))}
           </div>
 
-          {/* Other Projects Grid */}
+          {/* Other Projects */}
           <motion.h3
             initial="hidden"
             whileInView="visible"
@@ -204,42 +191,25 @@ const ProjectsSection = () => {
                     <Workflow className="w-5 h-5 text-primary" />
                   </div>
                   <div className="flex gap-2">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg hover:bg-secondary transition-colors"
-                      aria-label="View on GitHub"
-                    >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-secondary transition-colors" aria-label="View on GitHub">
                       <Github className="w-4 h-4" />
                     </a>
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg hover:bg-secondary transition-colors"
-                      aria-label="View live demo"
-                    >
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-secondary transition-colors" aria-label="View live demo">
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
-                <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h4>
+                <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{project.title}</h4>
                 <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.slice(0, 4).map((tech) => (
-                    <span key={tech} className="text-xs text-muted-foreground">
-                      {tech}
-                    </span>
+                    <span key={tech} className="text-xs text-muted-foreground">{tech}</span>
                   ))}
                 </div>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* View All Button */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -249,7 +219,7 @@ const ProjectsSection = () => {
             className="text-center mt-12"
           >
             <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/cloudwithstephen" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5" />
                 View All on GitHub
               </a>

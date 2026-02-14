@@ -14,18 +14,18 @@ import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: 'Front-End',
+    title: 'Web Development',
     icon: Code2,
     color: 'primary',
     skills: [
-      { name: 'HTML5', level: 95 },
-      { name: 'CSS3 / SCSS', level: 90 },
-      { name: 'JavaScript', level: 90 },
-      { name: 'React', level: 85 },
-      { name: 'TypeScript', level: 80 },
+      { name: 'HTML5 & CSS3', level: 95 },
+      { name: 'JavaScript / TypeScript', level: 90 },
+      { name: 'React & Next.js', level: 85 },
       { name: 'Tailwind CSS', level: 90 },
+      { name: 'UI/UX Implementation', level: 85 },
+      { name: 'Performance Optimization', level: 80 },
     ],
-    badges: ['Responsive Design', 'UI/UX Principles', 'Vite', 'Next.js'],
+    badges: ['Responsive Design', 'SEO', 'Vite', 'Framer Motion'],
   },
   {
     title: 'DevOps',
@@ -33,27 +33,27 @@ const skillCategories = [
     color: 'accent',
     skills: [
       { name: 'Git & GitHub', level: 90 },
-      { name: 'CI/CD Pipelines', level: 75 },
-      { name: 'Docker', level: 70 },
-      { name: 'Linux & Bash', level: 75 },
-      { name: 'Nginx', level: 70 },
-      { name: 'SSH', level: 80 },
+      { name: 'CI/CD Pipelines', level: 80 },
+      { name: 'Docker & Containers', level: 75 },
+      { name: 'Linux & Bash', level: 80 },
+      { name: 'Nginx & Reverse Proxy', level: 75 },
+      { name: 'Infrastructure as Code', level: 70 },
     ],
-    badges: ['GitHub Actions', 'Containers', 'Automation', 'Scripting'],
+    badges: ['GitHub Actions', 'Automation', 'Monitoring', 'Scripting'],
   },
   {
-    title: 'Cloud',
+    title: 'Cloud Engineering',
     icon: Cloud,
     color: 'primary',
     skills: [
-      { name: 'AWS Fundamentals', level: 65 },
-      { name: 'Cloud Deployment', level: 70 },
-      { name: 'VM Provisioning', level: 65 },
-      { name: 'DNS & Domains', level: 75 },
-      { name: 'SSL/TLS', level: 70 },
-      { name: 'Monitoring', level: 60 },
+      { name: 'AWS (EC2, S3, Route 53)', level: 75 },
+      { name: 'Cloud Architecture', level: 70 },
+      { name: 'VM & Server Management', level: 70 },
+      { name: 'DNS & Domain Config', level: 80 },
+      { name: 'SSL/TLS & Security', level: 75 },
+      { name: 'Cloud Monitoring', level: 65 },
     ],
-    badges: ['EC2', 'S3', 'Route 53', 'CloudFlare'],
+    badges: ['AWS', 'CloudFlare', 'Vercel', 'DigitalOcean'],
   },
 ];
 
@@ -88,10 +88,10 @@ const SkillsSection = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <span className="inline-block font-mono text-sm text-primary mb-4">// skills & expertise</span>
-            <h2 className="section-heading">Technical Arsenal</h2>
+            <span className="inline-block font-mono text-sm text-primary mb-4">// our expertise</span>
+            <h2 className="section-heading">Technical Capabilities</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A comprehensive toolkit spanning front-end development, DevOps practices, and cloud infrastructure.
+              Our team brings deep expertise across web development, DevOps, and cloud infrastructure.
             </p>
           </motion.div>
 
@@ -160,7 +160,7 @@ const SkillsSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-16 text-center"
           >
-            <h3 className="text-lg font-semibold mb-6">Tools & Technologies</h3>
+            <h3 className="text-lg font-semibold mb-6">Tools We Use</h3>
             <motion.div
               initial="hidden"
               whileInView="visible"

@@ -1,31 +1,31 @@
-import { Code2, Cloud, Cog, Zap, BookOpen, Target } from "lucide-react";
+import { Code2, Cloud, Cog, Users, Rocket, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
-const highlights = [
+const services = [
   {
     icon: Code2,
-    title: "Clean, Fast Interfaces",
+    title: "Web Development",
     description:
-      "User experiences that load quickly, work reliably, and help your customers get things done.",
+      "Custom web applications, responsive websites, and modern frontends that deliver fast, intuitive user experiences.",
   },
   {
     icon: Cloud,
-    title: "Scalable Infrastructure",
+    title: "Cloud & Infrastructure",
     description:
-      "Cloud systems designed to grow with your business—without surprise costs or downtime.",
+      "Cloud architecture, deployment, and management on AWS—designed to scale with your business without surprise costs.",
   },
   {
     icon: Cog,
-    title: "Less Manual Work",
+    title: "DevOps & Automation",
     description:
-      "Automation that handles repetitive tasks, so your team can focus on what matters.",
+      "CI/CD pipelines, containerization, and automation that eliminate manual work and speed up your delivery cycle.",
   },
 ];
 
 const traits = [
-  { icon: Target, label: "Problem Solver" },
-  { icon: Zap, label: "Automation-Driven" },
-  { icon: BookOpen, label: "Continuous Learner" },
+  { icon: Users, label: "Collaborative Team" },
+  { icon: Rocket, label: "Fast Delivery" },
+  { icon: Shield, label: "Reliable Systems" },
 ];
 
 const fadeInUp = {
@@ -60,11 +60,11 @@ const AboutSection = () => {
             className="text-center mb-16"
           >
             <span className="inline-block font-mono text-sm text-primary mb-4">
-              // what I do
+              // our services
             </span>
-            <h2 className="section-heading">Outcomes, Not Just Skills</h2>
+            <h2 className="section-heading">What We Do</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Real systems built for eCommerce platforms, business management tools, and growing startups.
+              We deliver end-to-end digital solutions for businesses—from concept to deployment and beyond.
             </p>
           </motion.div>
 
@@ -80,28 +80,28 @@ const AboutSection = () => {
               className="space-y-6"
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a{" "}
                 <span className="text-foreground font-medium">
-                  Front-End Developer
+                  CloudWithStephen (CWS)
                 </span>{" "}
-                with a passion for building beautiful, performant web
-                applications. Currently expanding my expertise into
+                is a digital agency that combines{" "}
                 <span className="text-primary font-medium">
-                  {" "}
-                  DevOps & Cloud Engineering
+                  web development
                 </span>
-                , I bridge the gap between development and operations.
+                ,{" "}
+                <span className="text-primary font-medium">
+                  cloud engineering
+                </span>
+                , and{" "}
+                <span className="text-primary font-medium">
+                  DevOps automation
+                </span>{" "}
+                to help businesses build, deploy, and scale their digital products.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My journey combines years of crafting user interfaces with
-                hands-on experience in cloud deployment, containerization, and
-                automation. I believe in building software that not only looks
-                great but is also scalable, secure, and easy to maintain.
+                We've built real-world systems for eCommerce platforms, business management tools, and growing startups. Our approach is hands-on, transparent, and focused on delivering measurable results.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether it's architecting a React application, setting up CI/CD
-                pipelines, or deploying to the cloud, I approach every challenge
-                with curiosity and a commitment to excellence.
+                Whether you need a new web application, cloud migration, or automated deployment pipeline—we bring the expertise and the execution.
               </p>
 
               {/* Traits */}
@@ -122,7 +122,7 @@ const AboutSection = () => {
               </div>
             </motion.div>
 
-            {/* Highlights Cards */}
+            {/* Service Cards */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -130,7 +130,7 @@ const AboutSection = () => {
               variants={staggerContainer}
               className="space-y-4"
             >
-              {highlights.map((item) => (
+              {services.map((item) => (
                 <motion.div
                   key={item.title}
                   variants={fadeInUp}
@@ -164,10 +164,10 @@ const AboutSection = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border"
           >
             {[
-              { value: "3+", label: "Years Experience" },
-              { value: "5+", label: "Projects Completed" },
-              { value: "5+", label: "Happy Clients" },
-              { value: "100%", label: "Commitment" },
+              { value: "3+", label: "Years in Business" },
+              { value: "15+", label: "Projects Delivered" },
+              { value: "10+", label: "Happy Clients" },
+              { value: "100%", label: "Client Satisfaction" },
             ].map((stat) => (
               <motion.div
                 key={stat.label}

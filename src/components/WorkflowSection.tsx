@@ -3,44 +3,44 @@ import { Code, GitBranch, TestTube, Container, Cloud, Globe, ArrowRight, CheckCi
 const workflowSteps = [
   {
     icon: Code,
-    title: 'Code',
-    description: 'Write clean, tested code following best practices',
-    details: ['TypeScript/JavaScript', 'React components', 'Unit tests'],
+    title: 'Develop',
+    description: 'We write clean, tested code following industry best practices',
+    details: ['TypeScript/React', 'Component architecture', 'Unit & integration tests'],
     color: 'primary',
   },
   {
     icon: GitBranch,
     title: 'Version Control',
-    description: 'Push to GitHub with meaningful commits',
+    description: 'Code is managed with meaningful commits and reviews',
     details: ['Feature branches', 'Pull requests', 'Code reviews'],
     color: 'primary',
   },
   {
     icon: TestTube,
     title: 'CI Pipeline',
-    description: 'Automated testing and quality checks',
-    details: ['Linting', 'Unit tests', 'Build verification'],
+    description: 'Automated testing and quality checks on every push',
+    details: ['Linting', 'Automated tests', 'Build verification'],
     color: 'accent',
   },
   {
     icon: Container,
     title: 'Containerize',
-    description: 'Package application with Docker',
+    description: 'We package applications with Docker for consistency',
     details: ['Dockerfile', 'Multi-stage builds', 'Image optimization'],
     color: 'accent',
   },
   {
     icon: Cloud,
     title: 'Deploy',
-    description: 'Push to cloud infrastructure',
+    description: 'Push to your cloud infrastructure with confidence',
     details: ['AWS/Vercel', 'Environment configs', 'Rollback support'],
     color: 'primary',
   },
   {
     icon: Globe,
-    title: 'Live',
-    description: 'Application served to users worldwide',
-    details: ['CDN distribution', 'SSL/TLS', 'Monitoring'],
+    title: 'Live & Monitor',
+    description: 'Your application served to users with full observability',
+    details: ['CDN distribution', 'SSL/TLS', 'Uptime monitoring'],
     color: 'primary',
   },
 ];
@@ -54,39 +54,28 @@ const WorkflowSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="inline-block font-mono text-sm text-primary mb-4">// devops workflow</span>
+            <span className="inline-block font-mono text-sm text-primary mb-4">// our process</span>
             <h2 className="section-heading">From Code to Cloud</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A streamlined pipeline that takes your code from development to production with automation at every step.
+              Our streamlined pipeline takes your project from development to production with automation at every step.
             </p>
           </div>
 
           {/* Workflow Timeline */}
           <div className="relative">
-            {/* Connection Line - Desktop */}
             <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-30" />
-
-            {/* Steps Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {workflowSteps.map((step, index) => (
                 <div key={step.title} className="relative group">
-                  {/* Step Number */}
                   <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-background border-2 border-primary flex items-center justify-center text-sm font-bold text-primary z-10">
                     {index + 1}
                   </div>
-
-                  {/* Card */}
                   <div className="glass-card glow-border p-6 h-full hover:bg-card/70 transition-all duration-300 pt-8">
-                    {/* Icon */}
                     <div className={`inline-flex p-3 rounded-lg bg-${step.color}/10 mb-4`}>
                       <step.icon className={`w-6 h-6 text-${step.color}`} />
                     </div>
-
-                    {/* Content */}
                     <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
                     <p className="text-sm text-muted-foreground mb-4">{step.description}</p>
-
-                    {/* Details */}
                     <ul className="space-y-2">
                       {step.details.map((detail) => (
                         <li key={detail} className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -96,8 +85,6 @@ const WorkflowSection = () => {
                       ))}
                     </ul>
                   </div>
-
-                  {/* Arrow - Desktop */}
                   {index < workflowSteps.length - 1 && index !== 2 && (
                     <div className="hidden lg:block absolute top-24 -right-4 z-20">
                       <ArrowRight className="w-5 h-5 text-primary/50" />
@@ -115,21 +102,15 @@ const WorkflowSection = () => {
                 <div className="w-3 h-3 rounded-full bg-destructive/70" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                 <div className="w-3 h-3 rounded-full bg-accent/70" />
-                <span className="ml-2 text-xs text-muted-foreground">deployment-pipeline</span>
+                <span className="ml-2 text-xs text-muted-foreground">cws-deployment-pipeline</span>
               </div>
               <div className="space-y-2 text-sm">
-                <p>
-                  <span className="terminal-prompt">$ </span>
-                  <span className="text-foreground">git push origin main</span>
-                </p>
+                <p><span className="terminal-prompt">$ </span><span className="text-foreground">git push origin main</span></p>
                 <p className="text-muted-foreground">→ Triggering CI/CD pipeline...</p>
                 <p className="text-muted-foreground">→ Running tests... <span className="text-accent">✓ All tests passed</span></p>
                 <p className="text-muted-foreground">→ Building Docker image... <span className="text-accent">✓ Build complete</span></p>
                 <p className="text-muted-foreground">→ Deploying to production... <span className="text-accent">✓ Deployed successfully</span></p>
-                <p>
-                  <span className="terminal-prompt">$ </span>
-                  <span className="text-primary">🚀 Application live at https://your-app.com</span>
-                </p>
+                <p><span className="terminal-prompt">$ </span><span className="text-primary">🚀 Application live at https://client-app.com</span></p>
               </div>
             </div>
           </div>

@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
-  { href: "#about", label: "About", isHash: true },
-  { href: "#skills", label: "Skills", isHash: true },
-  { href: "#projects", label: "Projects", isHash: true },
-  { href: "#workflow", label: "Workflow", isHash: true },
-  { href: "#experience", label: "Experience", isHash: true },
+  { href: "#about", label: "Services", isHash: true },
+  { href: "#skills", label: "Expertise", isHash: true },
+  { href: "#projects", label: "Our Work", isHash: true },
+  { href: "#workflow", label: "Process", isHash: true },
+  { href: "#experience", label: "Track Record", isHash: true },
   { href: "/blog", label: "Blog", isHash: false },
   { href: "/courses", label: "Courses", isHash: false },
   { href: "#contact", label: "Contact", isHash: true },
@@ -28,10 +28,8 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Helper function to handle navigation
   const handleNavClick = (href: string, isHash: boolean) => {
     if (isHash) {
-      // For hash links, if we're not on home page, navigate there first
       if (location.pathname !== "/") {
         window.location.href = `/${href}`;
       }
@@ -55,8 +53,8 @@ const Navigation = () => {
               <Cloud className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
             </div>
             <span className="font-semibold text-base sm:text-lg hidden sm:block">
-              <span className="text-primary">cloud</span>
-              <span className="text-foreground">withstephen</span>
+              <span className="text-primary">CWS</span>
+              <span className="text-muted-foreground text-sm ml-1">Agency</span>
             </span>
           </Link>
 
@@ -89,7 +87,7 @@ const Navigation = () => {
             <ThemeToggle />
             <div className="hidden md:block">
               <Button variant="hero" size="sm" asChild>
-                <a href="#contact">Hire Me</a>
+                <a href="#contact">Get a Quote</a>
               </Button>
             </div>
 
@@ -140,7 +138,7 @@ const Navigation = () => {
                   href={location.pathname === "/" ? "#contact" : "/#contact"}
                   onClick={() => setIsOpen(false)}
                 >
-                  Hire Me
+                  Get a Quote
                 </a>
               </Button>
             </div>

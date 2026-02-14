@@ -13,23 +13,23 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>CWS | CloudWithStephen - Frontend, DevOps & Cloud Engineer</title>
+        <title>CWS | CloudWithStephen — Web Development, DevOps & Cloud Agency</title>
         <meta
           name="description"
-          content="CWS (CloudWithStephen) helps businesses build reliable systems that scale. Expert in React, TypeScript, AWS, Docker, and CI/CD pipelines."
+          content="CWS (CloudWithStephen) is a digital agency specializing in web development, DevOps automation, and cloud infrastructure. We build reliable systems that scale."
         />
         <meta
           name="keywords"
-          content="CWS, CloudWithStephen, cloud with stephen, frontend developer, devops engineer, cloud engineer, react developer, aws, docker, ci/cd, portfolio"
+          content="CWS, CloudWithStephen, web development agency, devops agency, cloud agency, react, aws, docker, ci/cd, web app development"
         />
-        <meta name="author" content="Stephen - CWS CloudWithStephen" />
+        <meta name="author" content="CWS - CloudWithStephen" />
         <meta name="robots" content="index, follow" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="CWS | CloudWithStephen - Frontend, DevOps & Cloud Engineer" />
+        <meta property="og:title" content="CWS | CloudWithStephen — Web Development, DevOps & Cloud Agency" />
         <meta
           property="og:description"
-          content="Helping businesses build reliable systems that scale. Frontend engineering, cloud infrastructure, and automation."
+          content="A full-service digital agency delivering web development, cloud infrastructure, and DevOps automation for businesses."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.cloudwithstephen.com" />
@@ -38,8 +38,8 @@ const Index = () => {
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="CWS | CloudWithStephen - Frontend, DevOps & Cloud Engineer" />
-        <meta name="twitter:description" content="Helping businesses build reliable systems that scale." />
+        <meta name="twitter:title" content="CWS | CloudWithStephen — Web Dev, DevOps & Cloud Agency" />
+        <meta name="twitter:description" content="We build reliable systems that scale. Web development, cloud, and DevOps." />
         
         {/* Canonical */}
         <link rel="canonical" href="https://www.cloudwithstephen.com" />
@@ -48,16 +48,16 @@ const Index = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Stephen (CWS - CloudWithStephen)",
+            "@type": "Organization",
+            "name": "CWS - CloudWithStephen",
             "url": "https://www.cloudwithstephen.com",
-            "jobTitle": "Frontend Developer & DevOps Cloud Engineer",
-            "description": "CWS helps businesses build reliable systems that scale through frontend engineering, cloud infrastructure, and automation.",
+            "description": "A digital agency specializing in web development, DevOps automation, and cloud infrastructure for growing businesses.",
             "sameAs": [
               "https://github.com/cloudwithstephen",
-              "https://linkedin.com/in/cloudwithstephen"
+              "https://linkedin.com/in/stephen-james-215907322"
             ],
-            "knowsAbout": ["React", "TypeScript", "AWS", "Docker", "CI/CD", "DevOps", "Cloud Engineering"]
+            "knowsAbout": ["Web Development", "React", "TypeScript", "AWS", "Docker", "CI/CD", "DevOps", "Cloud Engineering"],
+            "serviceType": ["Web Development", "DevOps Automation", "Cloud Infrastructure"]
           })}
         </script>
       </Helmet>
