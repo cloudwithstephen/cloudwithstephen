@@ -1,4 +1,5 @@
-import { Cloud, Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import cwsLogo from "@/assets/cws-logo.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Cloud className="w-4 h-4 text-primary-foreground" />
-              </div>
+              <img src={cwsLogo} alt="CWS Logo" className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
               <span className="font-semibold">
                 <span className="text-primary">CWS</span>
                 <span className="text-muted-foreground text-sm ml-1">Agency</span>

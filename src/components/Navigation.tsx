@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Cloud } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import cwsLogo from "@/assets/cws-logo.svg";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 
@@ -49,9 +50,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-r from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Cloud className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
-            </div>
+            <img src={cwsLogo} alt="CWS Logo" className="w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-110 transition-transform duration-300" />
             <span className="font-semibold text-base sm:text-lg hidden sm:block">
               <span className="text-primary">CWS</span>
               <span className="text-muted-foreground text-sm ml-1">Agency</span>
