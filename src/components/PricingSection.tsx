@@ -19,7 +19,7 @@ const plans = [
   {
     name: "Starter",
     description: "Perfect for small businesses looking to establish their online presence.",
-    price: "£999",
+    price: "₦500,000",
     period: "one-time",
     features: [
       "Professional website (up to 5 pages)",
@@ -35,7 +35,7 @@ const plans = [
   {
     name: "Growth",
     description: "For businesses ready to scale with custom web apps and cloud infrastructure.",
-    price: "£2,499",
+    price: "₦1,500,000",
     period: "starting at",
     features: [
       "Custom web application",
