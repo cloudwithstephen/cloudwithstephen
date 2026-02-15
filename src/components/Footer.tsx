@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <img src={cwsLogo} alt="CWS Logo" className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+              <img src={cwsLogo} alt="CWS Logo" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
               <span className="font-semibold">
                 <span className="text-primary">CWS</span>
                 <span className="text-muted-foreground text-sm ml-1">Agency</span>
