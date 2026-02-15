@@ -37,7 +37,11 @@ const HeroSection = () => {
 
             {/* Value Proposition */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              A full-service digital agency specializing in{" "}
+              We build{" "}
+              <span className="text-foreground font-medium">
+                online presence for business owners
+              </span>
+              {" "}through{" "}
               <span className="text-foreground font-medium">
                 web development
               </span>
@@ -112,10 +116,10 @@ const HeroSection = () => {
                   <span className="text-foreground">cloudwithstephen</span>
                 </div>
                 <div className="pl-4 sm:pl-6 space-y-1.5 text-muted-foreground">
+                  <p>✓ Online presence for business owners</p>
                   <p>✓ Web apps with React, TypeScript & Next.js</p>
                   <p>✓ Cloud deployments on AWS & Docker</p>
                   <p>✓ CI/CD pipelines & DevOps automation</p>
-                  <p>✓ Infrastructure management & monitoring</p>
                 </div>
                 <div className="flex items-center gap-2 pt-2">
                   <span className="text-primary">→</span>

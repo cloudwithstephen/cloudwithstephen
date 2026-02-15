@@ -1,4 +1,4 @@
-import { Code2, Cloud, Cog, Users, Rocket, Shield } from "lucide-react";
+import { Code2, Cloud, Cog, Globe, Users, Rocket, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
@@ -19,6 +19,12 @@ const services = [
     title: "DevOps & Automation",
     description:
       "CI/CD pipelines, containerization, and automation that eliminate manual work and speed up your delivery cycle.",
+  },
+  {
+    icon: Globe,
+    title: "Online Presence for Businesses",
+    description:
+      "We help business owners establish and grow their online presence—from professional websites and branding to SEO and digital strategy.",
   },
 ];
 
@@ -95,13 +101,13 @@ const AboutSection = () => {
                 <span className="text-primary font-medium">
                   DevOps automation
                 </span>{" "}
-                to help businesses build, deploy, and scale their digital products.
+                to help businesses build, deploy, and scale their digital products—and establish a strong online presence.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We've built real-world systems for eCommerce platforms, business management tools, and growing startups. Our approach is hands-on, transparent, and focused on delivering measurable results.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you need a new web application, cloud migration, or automated deployment pipeline—we bring the expertise and the execution.
+                Whether you need a new web application, cloud migration, automated deployment pipeline, or a complete online presence for your business—we bring the expertise and the execution.
               </p>
 
               {/* Traits */}
