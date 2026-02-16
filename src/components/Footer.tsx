@@ -11,29 +11,64 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}
             <a href="#" className="flex items-center gap-2 group">
-              <img src={cwsLogo} alt="CWS Logo" className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
-              <span className="font-semibold">
+              <img
+                src={cwsLogo}
+                alt="CWS Logo"
+                className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+              {/* <span className="font-semibold">
                 <span className="text-primary">CWS</span>
                 <span className="text-muted-foreground text-sm ml-1">Agency</span>
-              </span>
+              </span> */}
             </a>
 
             {/* Quick Links */}
             <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-              <a href="#about" className="hover:text-foreground transition-colors">Services</a>
-              <a href="#projects" className="hover:text-foreground transition-colors">Our Work</a>
-              <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+              <a
+                href="#about"
+                className="hover:text-foreground transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="#projects"
+                className="hover:text-foreground transition-colors"
+              >
+                Our Work
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-foreground transition-colors"
+              >
+                Contact
+              </a>
             </nav>
 
             {/* Social Links */}
             <div className="flex items-center gap-3">
-              <a href="https://github.com/cloudwithstephen" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-secondary transition-colors" aria-label="GitHub">
+              <a
+                href="https://github.com/cloudwithstephen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg hover:bg-secondary transition-colors"
+                aria-label="GitHub"
+              >
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/stephen-james-215907322" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-secondary transition-colors" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/stephen-james-215907322"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg hover:bg-secondary transition-colors"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="mailto:cloudwithstephen@gmail.com" className="p-2 rounded-lg hover:bg-secondary transition-colors" aria-label="Email">
+              <a
+                href="mailto:cloudwithstephen@gmail.com"
+                className="p-2 rounded-lg hover:bg-secondary transition-colors"
+                aria-label="Email"
+              >
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -42,7 +77,8 @@ const Footer = () => {
           {/* Copyright */}
           <div className="mt-8 pt-8 border-t border-border text-center">
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-              Built with <Heart className="w-3 h-3 text-destructive" /> by CWS — React, TypeScript & Tailwind
+              Built with <Heart className="w-3 h-3 text-destructive" /> by CWS —
+              React, TypeScript & Tailwind
             </p>
             <p className="text-xs text-muted-foreground mt-2">
               © {currentYear} CloudWithStephen (CWS). All rights reserved.

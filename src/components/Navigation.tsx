@@ -50,11 +50,15 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group">
-            <img src={cwsLogo} alt="CWS Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain group-hover:scale-110 transition-transform duration-300" />
-            <span className="font-semibold text-base sm:text-lg hidden sm:block">
+            <img
+              src={cwsLogo}
+              alt="CWS Logo"
+              className="w-14 h-14 sm:w-12 sm:h-12 object-contain group-hover:scale-110 transition-transform duration-300"
+            />
+            {/* <span className="font-semibold text-base sm:text-lg hidden sm:block">
               <span className="text-primary">CWS</span>
               <span className="text-muted-foreground text-sm ml-1">Agency</span>
-            </span>
+            </span> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -77,7 +81,7 @@ const Navigation = () => {
                 >
                   {link.label}
                 </Link>
-              )
+              ),
             )}
           </div>
 
@@ -130,7 +134,7 @@ const Navigation = () => {
                   >
                     {link.label}
                   </Link>
-                )
+                ),
               )}
               <Button variant="hero" size="sm" className="mt-1.5" asChild>
                 <a
