@@ -53,7 +53,7 @@ const Navigation = () => {
             <img
               src={cwsLogo}
               alt="CWS Logo"
-              className="w-14 h-14 sm:w-12 sm:h-12 object-contain group-hover:scale-110 transition-transform duration-300"
+              className="w-14 h-14 sm:w-12 sm:h-12 object-contain rounded-xl group-hover:scale-110 transition-transform duration-300"
             />
             {/* <span className="font-semibold text-base sm:text-lg hidden sm:block">
               <span className="text-primary">CWS</span>
