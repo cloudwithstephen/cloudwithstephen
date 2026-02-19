@@ -1,37 +1,37 @@
-import { Code2, Cloud, Cog, Globe, Users, Rocket, Shield } from "lucide-react";
+import { Code2, ShoppingCart, LayoutDashboard, Globe, Users, Rocket, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
   {
-    icon: Code2,
-    title: "Web Development",
-    description:
-      "Custom web applications, responsive websites, and modern frontends that deliver fast, intuitive user experiences.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & Infrastructure",
-    description:
-      "Cloud architecture, deployment, and management on AWS—designed to scale with your business without surprise costs.",
-  },
-  {
-    icon: Cog,
-    title: "DevOps & Automation",
-    description:
-      "CI/CD pipelines, containerization, and automation that eliminate manual work and speed up your delivery cycle.",
-  },
-  {
     icon: Globe,
-    title: "Online Presence for Businesses",
+    title: "Business Websites",
     description:
-      "We help business owners establish and grow their online presence—from professional websites and branding to SEO and digital strategy.",
+      "Professional, responsive websites that showcase your brand and convert visitors into customers. From single-page sites to multi-page corporate platforms.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-Commerce Stores",
+    description:
+      "Fully functional online stores with payment integration, product management, and a seamless shopping experience that drives sales.",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Web Apps & Dashboards",
+    description:
+      "Custom web applications, admin dashboards, and SaaS platforms built with modern frameworks for speed, scalability, and great UX.",
+  },
+  {
+    icon: Code2,
+    title: "Landing Pages & Funnels",
+    description:
+      "High-converting landing pages designed to capture leads, promote products, and grow your business online with measurable results.",
   },
 ];
 
 const traits = [
-  { icon: Users, label: "Collaborative Team" },
-  { icon: Rocket, label: "Fast Delivery" },
-  { icon: Shield, label: "Reliable Systems" },
+  { icon: Users, label: "Dedicated Support" },
+  { icon: Rocket, label: "Fast Turnaround" },
+  { icon: Shield, label: "Quality Guaranteed" },
 ];
 
 const fadeInUp = {
@@ -68,9 +68,9 @@ const AboutSection = () => {
             <span className="inline-block font-mono text-sm text-primary mb-4">
               // our services
             </span>
-            <h2 className="section-heading">What We Do</h2>
+            <h2 className="section-heading">What We Build</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              We deliver end-to-end digital solutions for businesses—from concept to deployment and beyond.
+              We craft beautiful, high-performing websites and web applications tailored to your business goals.
             </p>
           </motion.div>
 
@@ -87,27 +87,23 @@ const AboutSection = () => {
             >
               <p className="text-lg text-muted-foreground leading-relaxed">
                 <span className="text-foreground font-medium">
-                  CloudWithStephen (CWS)
+                  CWS (CloudWithStephen)
                 </span>{" "}
-                is a digital agency that combines{" "}
+                is a web development agency that helps businesses{" "}
                 <span className="text-primary font-medium">
-                  web development
+                  launch and grow their online presence
                 </span>
-                ,{" "}
+                . We specialize in building{" "}
                 <span className="text-primary font-medium">
-                  cloud engineering
-                </span>
-                , and{" "}
-                <span className="text-primary font-medium">
-                  DevOps automation
+                  custom websites, e-commerce stores, and web applications
                 </span>{" "}
-                to help businesses build, deploy, and scale their digital products—and establish a strong online presence.
+                that look great and perform even better.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We've built real-world systems for eCommerce platforms, business management tools, and growing startups. Our approach is hands-on, transparent, and focused on delivering measurable results.
+                Whether you're a startup launching your first product, a small business needing an online store, or a growing company that needs a custom web app—we've got you covered.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you need a new web application, cloud migration, automated deployment pipeline, or a complete online presence for your business—we bring the expertise and the execution.
+                Every project is built with clean code, responsive design, and SEO best practices so your site works beautifully on every device and ranks well on search engines.
               </p>
 
               {/* Traits */}
@@ -170,10 +166,10 @@ const AboutSection = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border"
           >
             {[
-              { value: "3+", label: "Years in Business" },
-              { value: "15+", label: "Projects Delivered" },
-              { value: "10+", label: "Happy Clients" },
-              { value: "100%", label: "Client Satisfaction" },
+              { value: "50+", label: "Websites Delivered" },
+              { value: "30+", label: "Happy Clients" },
+              { value: "3+", label: "Years Experience" },
+              { value: "100%", label: "Satisfaction Rate" },
             ].map((stat) => (
               <motion.div
                 key={stat.label}

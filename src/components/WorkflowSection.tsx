@@ -1,46 +1,46 @@
-import { Code, GitBranch, TestTube, Container, Cloud, Globe, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, Paintbrush, Code, TestTube, Rocket, Headphones, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const workflowSteps = [
   {
-    icon: Code,
-    title: 'Develop',
-    description: 'We write clean, tested code following industry best practices',
-    details: ['TypeScript/React', 'Component architecture', 'Unit & integration tests'],
+    icon: MessageSquare,
+    title: 'Discovery Call',
+    description: 'We learn about your business, goals, and vision for the project',
+    details: ['Requirements gathering', 'Target audience', 'Timeline & budget'],
     color: 'primary',
   },
   {
-    icon: GitBranch,
-    title: 'Version Control',
-    description: 'Code is managed with meaningful commits and reviews',
-    details: ['Feature branches', 'Pull requests', 'Code reviews'],
+    icon: Paintbrush,
+    title: 'Design & Wireframe',
+    description: 'We create mockups and prototypes so you see it before we build it',
+    details: ['UI/UX design', 'Mobile & desktop layouts', 'Brand alignment'],
     color: 'primary',
+  },
+  {
+    icon: Code,
+    title: 'Development',
+    description: 'We build your site with clean, modern code and best practices',
+    details: ['React & TypeScript', 'Responsive design', 'SEO optimization'],
+    color: 'accent',
   },
   {
     icon: TestTube,
-    title: 'CI Pipeline',
-    description: 'Automated testing and quality checks on every push',
-    details: ['Linting', 'Automated tests', 'Build verification'],
+    title: 'Testing & QA',
+    description: 'Thorough testing across devices and browsers before launch',
+    details: ['Cross-browser testing', 'Performance audit', 'Accessibility check'],
     color: 'accent',
   },
   {
-    icon: Container,
-    title: 'Containerize',
-    description: 'We package applications with Docker for consistency',
-    details: ['Dockerfile', 'Multi-stage builds', 'Image optimization'],
-    color: 'accent',
-  },
-  {
-    icon: Cloud,
-    title: 'Deploy',
-    description: 'Push to your cloud infrastructure with confidence',
-    details: ['AWS/Vercel', 'Environment configs', 'Rollback support'],
+    icon: Rocket,
+    title: 'Launch',
+    description: 'We deploy your site and make sure everything runs smoothly',
+    details: ['Domain setup', 'SSL certificate', 'Analytics integration'],
     color: 'primary',
   },
   {
-    icon: Globe,
-    title: 'Live & Monitor',
-    description: 'Your application served to users with full observability',
-    details: ['CDN distribution', 'SSL/TLS', 'Uptime monitoring'],
+    icon: Headphones,
+    title: 'Support & Growth',
+    description: 'Ongoing maintenance, updates, and support to keep you growing',
+    details: ['Bug fixes', 'Content updates', 'Feature additions'],
     color: 'primary',
   },
 ];
@@ -55,9 +55,9 @@ const WorkflowSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <span className="inline-block font-mono text-sm text-primary mb-4">// our process</span>
-            <h2 className="section-heading">From Code to Cloud</h2>
+            <h2 className="section-heading">How We Work</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Our streamlined pipeline takes your project from development to production with automation at every step.
+              A simple, transparent process from initial conversation to a live website you're proud of.
             </p>
           </div>
 
@@ -95,24 +95,16 @@ const WorkflowSection = () => {
             </div>
           </div>
 
-          {/* Terminal Demo */}
-          <div className="mt-16 max-w-3xl mx-auto">
-            <div className="terminal">
-              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/50">
-                <div className="w-3 h-3 rounded-full bg-destructive/70" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                <div className="w-3 h-3 rounded-full bg-accent/70" />
-                <span className="ml-2 text-xs text-muted-foreground">cws-deployment-pipeline</span>
-              </div>
-              <div className="space-y-2 text-sm">
-                <p><span className="terminal-prompt">$ </span><span className="text-foreground">git push origin main</span></p>
-                <p className="text-muted-foreground">→ Triggering CI/CD pipeline...</p>
-                <p className="text-muted-foreground">→ Running tests... <span className="text-accent">✓ All tests passed</span></p>
-                <p className="text-muted-foreground">→ Building Docker image... <span className="text-accent">✓ Build complete</span></p>
-                <p className="text-muted-foreground">→ Deploying to production... <span className="text-accent">✓ Deployed successfully</span></p>
-                <p><span className="terminal-prompt">$ </span><span className="text-primary">🚀 Application live at https://client-app.com</span></p>
-              </div>
-            </div>
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <p className="text-muted-foreground mb-4">Ready to start your project?</p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+            >
+              Let's Talk
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
