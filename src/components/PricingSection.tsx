@@ -17,53 +17,53 @@ const staggerContainer = {
 
 const plans = [
   {
-    name: "Starter",
-    description: "Perfect for small businesses looking to establish their online presence.",
-    price: "₦500,000",
-    period: "one-time",
+    name: "Basic Website",
+    description: "Perfect for small businesses and personal brands getting started online.",
+    price: "₦300,000",
+    period: "starting at",
     features: [
-      "Professional website (up to 5 pages)",
+      "Up to 5 pages (Home, About, Services, etc.)",
       "Mobile-responsive design",
+      "Contact form & WhatsApp integration",
       "Basic SEO setup",
-      "Contact form integration",
-      "1 month of post-launch support",
-      "Domain & hosting guidance",
+      "Social media links",
+      "1 month free support",
     ],
     cta: "Get Started",
     highlighted: false,
   },
   {
-    name: "Growth",
-    description: "For businesses ready to scale with custom web apps and cloud infrastructure.",
-    price: "₦1,500,000",
+    name: "Business Pro",
+    description: "For growing businesses that need a professional website with advanced features.",
+    price: "₦800,000",
     period: "starting at",
     features: [
-      "Custom web application",
-      "Cloud infrastructure setup (AWS)",
-      "CI/CD pipeline configuration",
-      "Database design & integration",
-      "3 months of support & maintenance",
-      "Performance monitoring",
-      "SEO & analytics integration",
+      "Up to 10 pages with custom design",
+      "E-commerce / product catalog",
+      "Payment integration (Paystack/Stripe)",
+      "Blog or news section",
+      "SEO & Google Analytics setup",
+      "Admin dashboard",
+      "3 months free support",
     ],
     cta: "Let's Talk",
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    description: "Full-service partnership for complex systems, DevOps, and ongoing management.",
+    name: "Custom Web App",
+    description: "Full-stack web applications, SaaS platforms, and complex digital products.",
     price: "Custom",
-    period: "monthly retainer",
+    period: "project-based",
     features: [
-      "Full-stack development & architecture",
-      "Cloud migration & optimization",
-      "DevOps automation & monitoring",
-      "Dedicated support & SLA",
-      "Security audits & compliance",
-      "Scalable infrastructure design",
-      "Priority response times",
+      "Custom web application development",
+      "User authentication & roles",
+      "Database design & API integration",
+      "Real-time features & dashboards",
+      "Third-party integrations",
+      "Hosting & deployment setup",
+      "Ongoing maintenance & support",
     ],
-    cta: "Contact Us",
+    cta: "Get a Quote",
     highlighted: false,
   },
 ];
@@ -87,9 +87,9 @@ const PricingSection = () => {
             <span className="inline-block font-mono text-sm text-primary mb-4">
               // pricing
             </span>
-            <h2 className="section-heading">Simple, Transparent Pricing</h2>
+            <h2 className="section-heading">Affordable Web Development</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              No hidden fees. Choose a plan that fits your business, or reach out for a custom quote.
+              Transparent pricing with no hidden fees. Every project includes responsive design, SEO, and post-launch support.
             </p>
           </motion.div>
 

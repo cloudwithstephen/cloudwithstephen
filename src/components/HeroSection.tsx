@@ -21,39 +21,37 @@ const HeroSection = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-sm font-medium text-foreground/80">
-                Accepting new projects
+                Available for new projects
               </span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
-                CloudWithStephen
+                We Build Websites
+                <br />
+                <span className="text-primary">That Convert</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl font-medium text-primary">
-                We build reliable systems that scale your business
+              <p className="text-lg sm:text-xl md:text-2xl font-medium text-muted-foreground">
+                Web development agency for businesses ready to grow online
               </p>
             </div>
 
             {/* Value Proposition */}
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              We build{" "}
+              From{" "}
               <span className="text-foreground font-medium">
-                online presence for business owners
+                stunning landing pages
               </span>
-              {" "}through{" "}
+              {" "}to{" "}
               <span className="text-foreground font-medium">
-                web development
+                full-stack web apps
               </span>
-              ,{" "}
+              {" "}and{" "}
               <span className="text-foreground font-medium">
-                cloud infrastructure
+                e-commerce stores
               </span>
-              , and{" "}
-              <span className="text-foreground font-medium">
-                DevOps automation
-              </span>
-              . We help teams ship faster and operate with confidence.
+              —we design, build, and launch digital products that help your business stand out.
             </p>
 
             {/* CTA Buttons */}
@@ -64,7 +62,7 @@ const HeroSection = () => {
                 asChild
               >
                 <a href="#projects">
-                  See Our Work
+                  View Our Work
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -74,7 +72,7 @@ const HeroSection = () => {
                 className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg border-2"
                 asChild
               >
-                <a href="#contact">Get a Quote</a>
+                <a href="#contact">Get a Free Quote</a>
               </Button>
             </div>
 
@@ -103,7 +101,7 @@ const HeroSection = () => {
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
                 <span className="text-xs text-muted-foreground font-mono">
-                  cws@agency ~{" "}
+                  cws@studio ~{" "}
                 </span>
                 <div className="w-16" />
               </div>
@@ -113,13 +111,13 @@ const HeroSection = () => {
                 <div className="flex items-start gap-2">
                   <span className="text-primary">→</span>
                   <span className="text-muted-foreground">npx</span>
-                  <span className="text-foreground">cloudwithstephen</span>
+                  <span className="text-foreground">create-cws-project</span>
                 </div>
                 <div className="pl-4 sm:pl-6 space-y-1.5 text-muted-foreground">
-                  <p>✓ Online presence for business owners</p>
-                  <p>✓ Web apps with React, TypeScript & Next.js</p>
-                  <p>✓ Cloud deployments on AWS & Docker</p>
-                  <p>✓ CI/CD pipelines & DevOps automation</p>
+                  <p>✓ Custom websites & landing pages</p>
+                  <p>✓ E-commerce stores & online shops</p>
+                  <p>✓ Web apps, dashboards & SaaS platforms</p>
+                  <p>✓ SEO, performance & mobile-first design</p>
                 </div>
                 <div className="flex items-center gap-2 pt-2">
                   <span className="text-primary">→</span>
@@ -131,17 +129,17 @@ const HeroSection = () => {
             {/* Stats Cards */}
             <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6">
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-primary">3+</p>
+                <p className="text-xl sm:text-2xl font-bold text-primary">50+</p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Years Active
+                  Websites Built
                 </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
                 <p className="text-xl sm:text-2xl font-bold text-primary">
-                  15+
+                  30+
                 </p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Projects Delivered
+                  Happy Clients
                 </p>
               </div>
               <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
@@ -149,7 +147,7 @@ const HeroSection = () => {
                   100%
                 </p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  Client Satisfaction
+                  Satisfaction
                 </p>
               </div>
             </div>

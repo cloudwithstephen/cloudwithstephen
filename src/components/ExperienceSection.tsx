@@ -1,52 +1,54 @@
-import { Briefcase, GraduationCap, Award, Calendar, MapPin, ArrowUpRight } from 'lucide-react';
+import { Briefcase, Award, Calendar, MapPin, ArrowUpRight } from 'lucide-react';
 
 const experiences = [
   {
     type: 'work',
-    title: 'Agency Founded — CWS',
+    title: 'Founder & Lead Developer — CWS',
     company: 'CloudWithStephen',
     location: 'Remote / Lagos',
     period: '2023 - Present',
-    description: 'Launched CloudWithStephen as a full-service digital agency delivering web development, cloud infrastructure, and DevOps automation for businesses.',
+    description: 'Founded CWS as a web development agency helping businesses build professional websites, e-commerce stores, and custom web applications.',
     highlights: [
-      'Delivered 15+ client projects across eCommerce, SaaS, and startups',
-      'Built automated deployment pipelines for every project',
-      'Achieved 100% client satisfaction rate',
+      'Delivered 50+ websites for businesses across Nigeria and internationally',
+      'Specialized in React, Next.js, and modern frontend technologies',
+      'Built e-commerce stores generating revenue for small businesses',
     ],
   },
   {
     type: 'work',
-    title: 'Freelance Developer & Cloud Engineer',
+    title: 'Freelance Web Developer',
     company: 'Self-Employed',
     location: 'Remote',
     period: '2022 - 2023',
-    description: 'Built custom web applications and set up cloud infrastructure for clients. Laid the foundation for what became CWS.',
+    description: 'Worked with startups and small businesses to design and develop responsive websites, landing pages, and web applications.',
     highlights: [
-      'Built production-ready apps with React & TypeScript',
-      'Set up Docker, CI/CD, and AWS deployments for clients',
-      'Reduced client deployment time by 40% with automation',
+      'Built 20+ client websites with React & TypeScript',
+      'Implemented payment systems with Paystack and Stripe',
+      'Achieved top Lighthouse scores for client sites',
     ],
   },
   {
     type: 'work',
-    title: 'Junior Web Developer',
+    title: 'Junior Frontend Developer',
     company: 'Tech Startup',
     location: 'Lagos, Nigeria',
     period: '2021 - 2022',
-    description: 'Contributed to web applications using React and Node.js. First exposure to DevOps and cloud workflows.',
+    description: 'Started career building frontend interfaces and learning modern web development practices in a fast-paced startup environment.',
     highlights: [
-      'Built reusable component libraries',
-      'Introduced automated testing practices',
-      'Mentored interns on React best practices',
+      'Built reusable UI component libraries',
+      'Contributed to customer-facing web applications',
+      'Developed strong foundation in JavaScript and React',
     ],
   },
 ];
 
-const certifications = [
-  { name: 'AWS Cloud Practitioner', status: 'In Progress', year: '2024' },
-  { name: 'Docker Certified Associate', status: 'In Progress', year: '2024' },
-  { name: 'GitHub Actions Fundamentals', status: 'Completed', year: '2023' },
-  { name: 'React Developer Certification', status: 'Completed', year: '2022' },
+const specialties = [
+  'React & Next.js',
+  'E-Commerce Development',
+  'Landing Page Design',
+  'Responsive Web Design',
+  'SEO Optimization',
+  'Payment Integration',
 ];
 
 const ExperienceSection = () => {
@@ -58,10 +60,10 @@ const ExperienceSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="inline-block font-mono text-sm text-primary mb-4">// our track record</span>
-            <h2 className="section-heading">Experience & Credentials</h2>
+            <span className="inline-block font-mono text-sm text-primary mb-4">// our journey</span>
+            <h2 className="section-heading">Experience & Track Record</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              From freelancing to founding CWS—our journey of building reliable systems for real businesses.
+              Years of building websites and web applications for real businesses—here's our story.
             </p>
           </div>
 
@@ -74,16 +76,8 @@ const ExperienceSection = () => {
                     <div className="absolute left-[19px] top-12 bottom-0 w-0.5 bg-border group-hover:bg-primary/30 transition-colors" />
                   )}
                   <div className="flex gap-6">
-                    <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${
-                      exp.type === 'work' 
-                        ? 'bg-primary/10 text-primary' 
-                        : 'bg-accent/10 text-accent'
-                    }`}>
-                      {exp.type === 'work' ? (
-                        <Briefcase className="w-5 h-5" />
-                      ) : (
-                        <GraduationCap className="w-5 h-5" />
-                      )}
+                    <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary">
+                      <Briefcase className="w-5 h-5" />
                     </div>
                     <div className="glass-card glow-border p-6 flex-1 hover:bg-card/70 transition-all duration-300">
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
@@ -117,38 +111,28 @@ const ExperienceSection = () => {
               ))}
             </div>
 
-            {/* Certifications */}
+            {/* Specialties Sidebar */}
             <div>
               <div className="glass-card glow-border p-6 sticky top-24">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Award className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg">Certifications</h3>
+                  <h3 className="font-semibold text-lg">Our Specialties</h3>
                 </div>
-                <div className="space-y-4">
-                  {certifications.map((cert) => (
-                    <div key={cert.name} className="p-4 rounded-lg bg-secondary/30 border border-border hover:border-primary/30 transition-colors">
-                      <div className="flex items-start justify-between gap-2">
-                        <h4 className="font-medium text-sm">{cert.name}</h4>
-                        <span className="text-xs text-muted-foreground">{cert.year}</span>
-                      </div>
-                      <span className={`inline-block mt-2 text-xs px-2 py-0.5 rounded-full ${
-                        cert.status === 'Completed'
-                          ? 'bg-accent/10 text-accent'
-                          : 'bg-primary/10 text-primary'
-                      }`}>
-                        {cert.status}
-                      </span>
+                <div className="space-y-3">
+                  {specialties.map((specialty) => (
+                    <div key={specialty} className="p-3 rounded-lg bg-secondary/30 border border-border hover:border-primary/30 transition-colors">
+                      <h4 className="font-medium text-sm">{specialty}</h4>
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-border">
-                  <h4 className="font-medium text-sm mb-3">Currently Exploring</h4>
+                  <h4 className="font-medium text-sm mb-3">Industries We Serve</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Kubernetes', 'Terraform', 'AWS Solutions Architect'].map((topic) => (
-                      <span key={topic} className="skill-badge text-xs">{topic}</span>
+                    {['E-Commerce', 'SaaS', 'Real Estate', 'Education', 'Healthcare', 'Startups'].map((industry) => (
+                      <span key={industry} className="skill-badge text-xs">{industry}</span>
                     ))}
                   </div>
                 </div>

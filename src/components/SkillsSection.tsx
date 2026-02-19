@@ -1,59 +1,59 @@
 import { 
   Code2, 
   Layout, 
-  Container,
-  Terminal,
+  Paintbrush,
+  Smartphone,
   Server,
-  Cloud,
+  Database,
   Globe,
   Shield,
-  Activity,
-  Settings
+  Zap,
+  Search
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: 'Web Development',
+    title: 'Frontend Development',
     icon: Code2,
     color: 'primary',
     skills: [
+      { name: 'React & Next.js', level: 90 },
+      { name: 'TypeScript', level: 85 },
+      { name: 'Tailwind CSS', level: 95 },
       { name: 'HTML5 & CSS3', level: 95 },
-      { name: 'JavaScript / TypeScript', level: 90 },
-      { name: 'React & Next.js', level: 85 },
-      { name: 'Tailwind CSS', level: 90 },
-      { name: 'UI/UX Implementation', level: 85 },
-      { name: 'Performance Optimization', level: 80 },
+      { name: 'Responsive Design', level: 90 },
+      { name: 'Animations & Interactions', level: 85 },
     ],
-    badges: ['Responsive Design', 'SEO', 'Vite', 'Framer Motion'],
+    badges: ['Vite', 'Framer Motion', 'shadcn/ui', 'Material UI'],
   },
   {
-    title: 'DevOps',
-    icon: Settings,
+    title: 'Backend & Databases',
+    icon: Server,
     color: 'accent',
     skills: [
-      { name: 'Git & GitHub', level: 90 },
-      { name: 'CI/CD Pipelines', level: 80 },
-      { name: 'Docker & Containers', level: 75 },
-      { name: 'Linux & Bash', level: 80 },
-      { name: 'Nginx & Reverse Proxy', level: 75 },
-      { name: 'Infrastructure as Code', level: 70 },
+      { name: 'Node.js & Express', level: 80 },
+      { name: 'REST APIs', level: 85 },
+      { name: 'PostgreSQL & MySQL', level: 75 },
+      { name: 'Firebase & Supabase', level: 80 },
+      { name: 'Authentication & Auth', level: 80 },
+      { name: 'Payment Integration', level: 75 },
     ],
-    badges: ['GitHub Actions', 'Automation', 'Monitoring', 'Scripting'],
+    badges: ['Stripe', 'Paystack', 'JWT', 'OAuth'],
   },
   {
-    title: 'Cloud Engineering',
-    icon: Cloud,
+    title: 'Design & Optimization',
+    icon: Paintbrush,
     color: 'primary',
     skills: [
-      { name: 'AWS (EC2, S3, Route 53)', level: 75 },
-      { name: 'Cloud Architecture', level: 70 },
-      { name: 'VM & Server Management', level: 70 },
-      { name: 'DNS & Domain Config', level: 80 },
-      { name: 'SSL/TLS & Security', level: 75 },
-      { name: 'Cloud Monitoring', level: 65 },
+      { name: 'UI/UX Design', level: 85 },
+      { name: 'Figma to Code', level: 85 },
+      { name: 'SEO Optimization', level: 80 },
+      { name: 'Performance Tuning', level: 80 },
+      { name: 'Accessibility (a11y)', level: 75 },
+      { name: 'Brand & Visual Design', level: 80 },
     ],
-    badges: ['AWS', 'CloudFlare', 'Vercel', 'DigitalOcean'],
+    badges: ['Figma', 'Google Analytics', 'Lighthouse', 'Core Web Vitals'],
   },
 ];
 
@@ -89,9 +89,9 @@ const SkillsSection = () => {
             className="text-center mb-16"
           >
             <span className="inline-block font-mono text-sm text-primary mb-4">// our expertise</span>
-            <h2 className="section-heading">Technical Capabilities</h2>
+            <h2 className="section-heading">Our Tech Stack</h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Our team brings deep expertise across web development, DevOps, and cloud infrastructure.
+              We use modern, battle-tested technologies to build fast, scalable, and beautiful web experiences.
             </p>
           </motion.div>
 
@@ -160,7 +160,7 @@ const SkillsSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-16 text-center"
           >
-            <h3 className="text-lg font-semibold mb-6">Tools We Use</h3>
+            <h3 className="text-lg font-semibold mb-6">Tools & Platforms We Use</h3>
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -170,14 +170,14 @@ const SkillsSection = () => {
             >
               {[
                 { icon: Code2, label: 'VS Code' },
-                { icon: Container, label: 'Docker' },
-                { icon: Terminal, label: 'Terminal' },
-                { icon: Server, label: 'Nginx' },
-                { icon: Cloud, label: 'AWS' },
-                { icon: Globe, label: 'Vercel' },
-                { icon: Shield, label: 'Security' },
-                { icon: Activity, label: 'Monitoring' },
                 { icon: Layout, label: 'Figma' },
+                { icon: Globe, label: 'Vercel' },
+                { icon: Database, label: 'Supabase' },
+                { icon: Shield, label: 'Cloudflare' },
+                { icon: Zap, label: 'Stripe' },
+                { icon: Search, label: 'SEO Tools' },
+                { icon: Smartphone, label: 'Mobile-First' },
+                { icon: Server, label: 'Node.js' },
               ].map((tool) => (
                 <motion.div
                   key={tool.label}
