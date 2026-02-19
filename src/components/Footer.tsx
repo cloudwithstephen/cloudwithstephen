@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
-import cwsLogo from "@/assets/cws-logo.svg";
+import cwsLogo from "@/assets/cws-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
