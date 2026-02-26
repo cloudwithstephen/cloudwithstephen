@@ -1,12 +1,13 @@
 import { Helmet } from 'react-helmet-async';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import SkillsSection from '@/components/SkillsSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import WorkflowSection from '@/components/WorkflowSection';
+import ServicesSection from '@/components/ServicesSection';
+import HowItWorksSection from '@/components/HowItWorksSection';
+import WhyChooseUsSection from '@/components/WhyChooseUsSection';
+import ResultsSection from '@/components/ResultsSection';
 import PricingSection from '@/components/PricingSection';
-import ExperienceSection from '@/components/ExperienceSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import FAQSection from '@/components/FAQSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -14,51 +15,44 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>CWS | CloudWithStephen — Web Development, DevOps & Cloud Agency</title>
+        <title>CloudWithStephen — AI Solutions & Web Development Agency</title>
         <meta
           name="description"
-          content="CWS (CloudWithStephen) is a digital agency specializing in web development, DevOps automation, and cloud infrastructure. We build reliable systems that scale."
+          content="CloudWithStephen helps businesses grow online with AI automation, professional websites, and smart digital solutions. Get more customers, save time, and reduce costs."
         />
         <meta
           name="keywords"
-          content="CWS, CloudWithStephen, web development agency, devops agency, cloud agency, react, aws, docker, ci/cd, web app development"
+          content="CloudWithStephen, AI solutions, web development, AI chatbot, business automation, website design, ecommerce, Lagos, Nigeria"
         />
-        <meta name="author" content="CWS - CloudWithStephen" />
+        <meta name="author" content="CloudWithStephen" />
         <meta name="robots" content="index, follow" />
         
-        {/* Open Graph */}
-        <meta property="og:title" content="CWS | CloudWithStephen — Web Development, DevOps & Cloud Agency" />
-        <meta
-          property="og:description"
-          content="A full-service digital agency delivering web development, cloud infrastructure, and DevOps automation for businesses."
-        />
+        <meta property="og:title" content="CloudWithStephen — AI Solutions & Web Development Agency" />
+        <meta property="og:description" content="Helping businesses grow faster with AI automation and smart websites. Professional web development and AI solutions." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.cloudwithstephen.com" />
-        <meta property="og:site_name" content="CWS - CloudWithStephen" />
+        <meta property="og:site_name" content="CloudWithStephen" />
         <meta property="og:locale" content="en_US" />
         
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="CWS | CloudWithStephen — Web Dev, DevOps & Cloud Agency" />
-        <meta name="twitter:description" content="We build reliable systems that scale. Web development, cloud, and DevOps." />
+        <meta name="twitter:title" content="CloudWithStephen — AI Solutions & Web Development" />
+        <meta name="twitter:description" content="AI automation & professional websites for business growth." />
         
-        {/* Canonical */}
         <link rel="canonical" href="https://www.cloudwithstephen.com" />
         
-        {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "CWS - CloudWithStephen",
+            "name": "CloudWithStephen",
             "url": "https://www.cloudwithstephen.com",
-            "description": "A digital agency specializing in web development, DevOps automation, and cloud infrastructure for growing businesses.",
+            "description": "AI Solutions & Web Development Agency helping businesses grow online, automate operations, and save money.",
             "sameAs": [
               "https://github.com/cloudwithstephen",
               "https://linkedin.com/in/stephen-james-215907322"
             ],
-            "knowsAbout": ["Web Development", "React", "TypeScript", "AWS", "Docker", "CI/CD", "DevOps", "Cloud Engineering"],
-            "serviceType": ["Web Development", "DevOps Automation", "Cloud Infrastructure"]
+            "knowsAbout": ["AI Automation", "Web Development", "AI Chatbots", "Ecommerce", "Business Websites"],
+            "serviceType": ["AI Solutions", "Web Development", "Business Automation"]
           })}
         </script>
       </Helmet>
@@ -67,12 +61,13 @@ const Index = () => {
         <Navigation />
         <main>
           <HeroSection />
-          <AboutSection />
-          <SkillsSection />
-          <ProjectsSection />
-          <WorkflowSection />
+          <ServicesSection />
+          <HowItWorksSection />
+          <WhyChooseUsSection />
+          <ResultsSection />
           <PricingSection />
-          <ExperienceSection />
+          <TestimonialsSection />
+          <FAQSection />
           <ContactSection />
         </main>
         <Footer />
