@@ -1,161 +1,135 @@
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Bot, Globe, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      {/* Subtle Background */}
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--primary)/0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,hsl(var(--accent)/0.1),transparent_50%)]" />
+        <div className="absolute inset-0 grid-pattern opacity-10" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20 pb-12 sm:pt-24 sm:pb-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              <span className="text-sm font-medium text-foreground/80">
-                Available for new projects
-              </span>
-            </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-12 sm:pt-28 sm:pb-16 lg:py-24">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span className="text-sm font-medium text-muted-foreground">
+              AI Solutions & Web Development Agency
+            </span>
+          </motion.div>
 
-            {/* Main Headline */}
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
-                We Build Websites
-                <br />
-                <span className="text-primary">That Convert</span>
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl font-medium text-muted-foreground">
-                Web development agency for businesses ready to grow online
-              </p>
-            </div>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6"
+          >
+            Helping Businesses Grow
+            <br />
+            <span className="gradient-text">Faster with AI</span>
+            <br />
+            & Smart Websites
+          </motion.h1>
 
-            {/* Value Proposition */}
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              From{" "}
-              <span className="text-foreground font-medium">
-                stunning landing pages
-              </span>
-              {" "}to{" "}
-              <span className="text-foreground font-medium">
-                full-stack web apps
-              </span>
-              {" "}and{" "}
-              <span className="text-foreground font-medium">
-                e-commerce stores
-              </span>
-              —we design, build, and launch digital products that help your business stand out.
-            </p>
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed"
+          >
+            We build{" "}
+            <span className="text-foreground font-medium">AI-powered automation</span>,{" "}
+            <span className="text-foreground font-medium">professional websites</span>, and{" "}
+            <span className="text-foreground font-medium">digital solutions</span>{" "}
+            that help you attract more customers, automate operations, and reduce costs.
+          </motion.p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto group px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg bg-primary hover:bg-primary/90"
-                asChild
-              >
-                <a href="#projects">
-                  View Our Work
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg border-2"
-                asChild
-              >
-                <a href="#contact">Get a Free Quote</a>
-              </Button>
-            </div>
-
-            {/* Social Link */}
-            <div className="flex items-center justify-center lg:justify-start pt-4">
-              <a
-                href="https://github.com/cloudwithstephen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Github className="w-5 h-5" />
-                <span className="text-sm font-medium">@cloudwithstephen</span>
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          >
+            <Button
+              size="lg"
+              className="w-full sm:w-auto group px-8 py-6 text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25"
+              asChild
+            >
+              <a href="#contact">
+                Get Started
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-            </div>
-          </div>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto px-8 py-6 text-lg border-2 border-border hover:border-primary/50"
+              asChild
+            >
+              <a href="#contact">Book Consultation</a>
+            </Button>
+          </motion.div>
 
-          {/* Right Content - Terminal Card */}
-          <div className="relative w-full max-w-lg mx-auto lg:mx-0 lg:max-w-none">
-            <div className="relative bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
-              {/* Terminal Header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-muted/50 border-b border-border">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-destructive/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <span className="text-xs text-muted-foreground font-mono">
-                  cws@studio ~{" "}
-                </span>
-                <div className="w-16" />
+          {/* Feature Pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-4"
+          >
+            {[
+              { icon: Bot, label: "AI Automation" },
+              { icon: Globe, label: "Custom Websites" },
+              { icon: Zap, label: "Fast Delivery" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-card/50 border border-border backdrop-blur-sm"
+              >
+                <item.icon className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium">{item.label}</span>
               </div>
+            ))}
+          </motion.div>
 
-              {/* Terminal Content */}
-              <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm text-left space-y-3 bg-card">
-                <div className="flex items-start gap-2">
-                  <span className="text-primary">→</span>
-                  <span className="text-muted-foreground">npx</span>
-                  <span className="text-foreground">create-cws-project</span>
-                </div>
-                <div className="pl-4 sm:pl-6 space-y-1.5 text-muted-foreground">
-                  <p>✓ Custom websites & landing pages</p>
-                  <p>✓ E-commerce stores & online shops</p>
-                  <p>✓ Web apps, dashboards & SaaS platforms</p>
-                  <p>✓ SEO, performance & mobile-first design</p>
-                </div>
-                <div className="flex items-center gap-2 pt-2">
-                  <span className="text-primary">→</span>
-                  <span className="animate-pulse text-primary">▊</span>
-                </div>
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="grid grid-cols-3 gap-6 mt-16 max-w-2xl mx-auto"
+          >
+            {[
+              { value: "50+", label: "Projects Delivered" },
+              { value: "30+", label: "Happy Clients" },
+              { value: "100%", label: "Satisfaction Rate" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl sm:text-3xl font-bold gradient-text">{stat.value}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">{stat.label}</p>
               </div>
-            </div>
-
-            {/* Stats Cards */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6">
-              <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-primary">50+</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  Websites Built
-                </p>
-              </div>
-              <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-primary">
-                  30+
-                </p>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  Happy Clients
-                </p>
-              </div>
-              <div className="bg-card rounded-xl border border-border p-3 sm:p-4 text-center">
-                <p className="text-xl sm:text-2xl font-bold text-primary">
-                  100%
-                </p>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  Satisfaction
-                </p>
-              </div>
-            </div>
-          </div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator - Hidden on mobile */}
+      {/* Scroll Indicator */}
       <div className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
           <div className="w-1 h-2 rounded-full bg-muted-foreground/50 animate-pulse" />
