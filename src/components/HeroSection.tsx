@@ -11,8 +11,8 @@ const HeroSection = () => {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28 pb-16 lg:pt-32 lg:pb-24">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-24">
+        <div className="max-w-4xl mx-auto lg:mx-0">
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.08] mb-4 sm:mb-6"
           >
             Build smarter.
             <br />
@@ -43,7 +43,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-12 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 sm:mb-12 leading-relaxed"
           >
             We help businesses grow with AI automation, professional websites, and digital solutions that attract customers and cut costs.
           </motion.p>
@@ -53,11 +53,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-start gap-4 mb-20"
+            className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 mb-12 sm:mb-20"
           >
             <Button
               size="lg"
-              className="group px-8 py-6 text-base"
+              className="group px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base w-full sm:w-auto"
               asChild
             >
               <a href="#contact">
@@ -68,7 +68,7 @@ const HeroSection = () => {
             <Button
               variant="ghost"
               size="lg"
-              className="px-8 py-6 text-base text-muted-foreground hover:text-foreground"
+              className="px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base text-muted-foreground hover:text-foreground w-full sm:w-auto"
               asChild
             >
               <a href="#contact">Book a call →</a>
@@ -80,7 +80,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap gap-12 border-t border-border pt-8"
+            className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 border-t border-border pt-6 sm:pt-8"
           >
             {[
               { value: "50+", label: "Projects" },

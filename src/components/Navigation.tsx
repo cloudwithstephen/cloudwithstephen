@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import cwsLogo from "@/assets/cws-logo.png";
+import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -63,7 +64,8 @@ const Navigation = () => {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <ThemeToggle />
             <div className="hidden md:block">
               <Button size="sm" asChild className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
                 <a href="#contact">Get Started</a>
