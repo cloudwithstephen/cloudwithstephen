@@ -106,11 +106,11 @@ const HeroSection = () => {
             className="hidden lg:flex justify-center items-center"
           >
             <div className="relative">
-              <div className="absolute -inset-4 rounded-2xl bg-primary/10 blur-2xl" />
+              <div className="absolute -inset-4 rounded-full bg-primary/10 blur-2xl" />
               <img
                 src={stephenHero}
                 alt="Stephen — founder of CloudWithStephen, AI solutions builder and web developer"
-                className="relative rounded-2xl w-full max-w-md object-cover shadow-2xl shadow-primary/10 border border-border/50"
+                className="relative rounded-full w-72 h-72 xl:w-96 xl:h-96 object-cover shadow-2xl shadow-primary/10 border-4 border-border/50"
               />
             </div>
           </motion.div>
