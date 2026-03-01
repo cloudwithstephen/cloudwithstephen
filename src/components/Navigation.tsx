@@ -25,6 +25,15 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setIsOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleNavClick = (href: string, isHash: boolean) => {
     if (isHash && location.pathname !== "/") {
       window.location.href = `/${href}`;
@@ -36,63 +45,96 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-card border-b border-glass-border py-2 md:py-3"
-          : "py-3 md:py-5 bg-background/80 backdrop-blur-sm"
+          ? "glass-card border-b border-glass-border py-2"
+          : "py-3 bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-3 sm:px-4 md:px-6">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src={cwsLogo} alt="CWS Logo" className="w-12 h-12 sm:w-14 sm:h-14 object-contain rounded-xl group-hover:scale-110 transition-transform duration-300" />
-            <span className="font-bold text-sm sm:text-base hidden sm:block">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-12 sm:h-14">
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
+            <img
+              src={cwsLogo}
+              alt="CWS Logo"
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl group-hover:scale-110 transition-transform duration-300"
+            />
+            <span className="font-bold text-sm sm:text-base hidden xs:block">
               <span className="text-primary">Cloud</span>
               <span className="text-foreground">WithStephen</span>
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) =>
               link.isHash ? (
-                <a key={link.href} href={location.pathname === "/" ? link.href : `/${link.href}`} onClick={() => handleNavClick(link.href, true)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 link-underline">
+                <a
+                  key={link.href}
+                  href={location.pathname === "/" ? link.href : `/${link.href}`}
+                  onClick={() => handleNavClick(link.href, true)}
+                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 link-underline whitespace-nowrap"
+                >
                   {link.label}
                 </a>
               ) : (
-                <Link key={link.href} to={link.href} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 link-underline">
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 link-underline whitespace-nowrap"
+                >
                   {link.label}
                 </Link>
               )
             )}
           </div>
 
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <Button size="sm" asChild className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
                 <a href="#contact">Get Started</a>
               </Button>
             </div>
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-foreground hover:text-primary transition-colors" aria-label="Toggle menu">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
               {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
+        {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden mt-3 pb-3 animate-fade-in">
+          <div className="lg:hidden mt-2 pb-4 animate-fade-in border-t border-border pt-3">
             <div className="flex flex-col gap-1">
               {navLinks.map((link) =>
                 link.isHash ? (
-                  <a key={link.href} href={location.pathname === "/" ? link.href : `/${link.href}`} onClick={() => handleNavClick(link.href, true)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all">
+                  <a
+                    key={link.href}
+                    href={location.pathname === "/" ? link.href : `/${link.href}`}
+                    onClick={() => handleNavClick(link.href, true)}
+                    className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all"
+                  >
                     {link.label}
                   </a>
                 ) : (
-                  <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all">
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all"
+                  >
                     {link.label}
                   </Link>
                 )
               )}
-              <Button size="sm" className="mt-2" asChild>
-                <a href={location.pathname === "/" ? "#contact" : "/#contact"} onClick={() => setIsOpen(false)}>Get Started</a>
+              <Button size="default" className="mt-3 mx-4" asChild>
+                <a
+                  href={location.pathname === "/" ? "#contact" : "/#contact"}
+                  onClick={() => setIsOpen(false)}
+                >
+                  Get Started
+                </a>
               </Button>
             </div>
           </div>

@@ -13,9 +13,9 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Left — Text */}
-          <div className="max-w-xl">
+          <div className="max-w-xl order-2 lg:order-1">
             {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -98,21 +98,30 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Right — Image */}
+          {/* Right — Image (visible on all devices) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:flex justify-center items-center"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col items-center order-1 lg:order-2"
           >
             <div className="relative">
               <div className="absolute -inset-4 rounded-full bg-primary/10 blur-2xl" />
               <img
                 src={stephenHero}
                 alt="Stephen — founder of CloudWithStephen, AI solutions builder and web developer"
-                className="relative rounded-full w-72 h-72 xl:w-96 xl:h-96 object-cover shadow-2xl shadow-primary/10 border-4 border-border/50"
+                className="relative rounded-full w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-cover shadow-2xl shadow-primary/10 border-4 border-border/50"
               />
             </div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-4 text-center"
+            >
+              <p className="text-lg sm:text-xl font-semibold text-foreground">Stephen James</p>
+              <p className="text-sm text-muted-foreground">AI Solutions Builder & Web Developer</p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
