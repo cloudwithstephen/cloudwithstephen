@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import cwsLogo from "@/assets/cws-logo.png";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
@@ -25,14 +26,19 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setIsOpen(false);
+      if (window.innerWidth >= 1024) setIsOpen(false);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [isOpen]);
 
   const handleNavClick = (href: string, isHash: boolean) => {
     if (isHash && location.pathname !== "/") {
@@ -42,78 +48,38 @@ const Navigation = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "glass-card border-b border-glass-border py-2"
-          : "py-3 bg-background/80 backdrop-blur-sm"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-12 sm:h-14">
-          <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <img
-              src={cwsLogo}
-              alt="CWS Logo"
-              className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-xl group-hover:scale-110 transition-transform duration-300"
-            />
-            <span className="font-bold text-sm sm:text-base hidden xs:block">
-              <span className="text-primary">Cloud</span>
-              <span className="text-foreground">WithStephen</span>
-            </span>
-          </Link>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-background/70 backdrop-blur-xl border-b border-border/50 shadow-sm py-2"
+            : "py-3 sm:py-4 bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-12 sm:h-14">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2.5 group shrink-0 relative z-[60]">
+              <img
+                src={cwsLogo}
+                alt="CWS Logo"
+                className="w-9 h-9 sm:w-10 sm:h-10 object-contain rounded-lg group-hover:scale-110 transition-transform duration-300"
+              />
+              <span className="font-bold text-sm sm:text-base">
+                <span className="text-primary">Cloud</span>
+                <span className="text-foreground">WithStephen</span>
+              </span>
+            </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) =>
-              link.isHash ? (
-                <a
-                  key={link.href}
-                  href={location.pathname === "/" ? link.href : `/${link.href}`}
-                  onClick={() => handleNavClick(link.href, true)}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 link-underline whitespace-nowrap"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 link-underline whitespace-nowrap"
-                >
-                  {link.label}
-                </Link>
-              )
-            )}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <div className="hidden lg:block">
-              <Button size="sm" asChild className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
-                <a href="#contact">Get Started</a>
-              </Button>
-            </div>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        {isOpen && (
-          <div className="lg:hidden mt-2 pb-4 animate-fade-in border-t border-border pt-3">
-            <div className="flex flex-col gap-1">
+            {/* Desktop nav links */}
+            <div className="hidden lg:flex items-center gap-0.5 bg-muted/40 backdrop-blur-sm rounded-full px-1.5 py-1 border border-border/40">
               {navLinks.map((link) =>
                 link.isHash ? (
                   <a
                     key={link.href}
                     href={location.pathname === "/" ? link.href : `/${link.href}`}
                     onClick={() => handleNavClick(link.href, true)}
-                    className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all"
+                    className="px-3.5 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-background/60 rounded-full transition-all duration-200 whitespace-nowrap"
                   >
                     {link.label}
                   </a>
@@ -121,26 +87,111 @@ const Navigation = () => {
                   <Link
                     key={link.href}
                     to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all"
+                    className="px-3.5 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-background/60 rounded-full transition-all duration-200 whitespace-nowrap"
                   >
                     {link.label}
                   </Link>
                 )
               )}
-              <Button size="default" className="mt-3 mx-4" asChild>
-                <a
-                  href={location.pathname === "/" ? "#contact" : "/#contact"}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Started
-                </a>
-              </Button>
+            </div>
+
+            {/* Right actions */}
+            <div className="flex items-center gap-2 relative z-[60]">
+              <ThemeToggle />
+              <div className="hidden lg:block">
+                <Button size="sm" asChild className="rounded-full px-5 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
+                  <a href="#contact">Get Started</a>
+                </Button>
+              </div>
+
+              {/* Hamburger — animated */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-muted/50 transition-colors"
+                aria-label="Toggle menu"
+              >
+                <div className="w-5 h-4 flex flex-col justify-between relative">
+                  <span
+                    className={`block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center ${
+                      isOpen ? "rotate-45 translate-y-[7px]" : ""
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 w-3.5 bg-foreground rounded-full transition-all duration-300 ml-auto ${
+                      isOpen ? "opacity-0 scale-x-0" : ""
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center ${
+                      isOpen ? "-rotate-45 -translate-y-[7px]" : ""
+                    }`}
+                  />
+                </div>
+              </button>
             </div>
           </div>
+        </div>
+      </nav>
+
+      {/* Full-screen mobile menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl lg:hidden"
+          >
+            <div className="flex flex-col items-center justify-center min-h-screen gap-2 px-6">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                >
+                  {link.isHash ? (
+                    <a
+                      href={location.pathname === "/" ? link.href : `/${link.href}`}
+                      onClick={() => handleNavClick(link.href, true)}
+                      className="block text-2xl sm:text-3xl font-medium text-muted-foreground hover:text-foreground py-3 transition-colors text-center"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block text-2xl sm:text-3xl font-medium text-muted-foreground hover:text-foreground py-3 transition-colors text-center"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.3, delay: navLinks.length * 0.05 }}
+                className="mt-6"
+              >
+                <Button size="lg" className="rounded-full px-10 py-6 text-base" asChild>
+                  <a
+                    href={location.pathname === "/" ? "#contact" : "/#contact"}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get Started
+                  </a>
+                </Button>
+              </motion.div>
+            </div>
+          </motion.div>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+    </>
   );
 };
 
