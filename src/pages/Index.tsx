@@ -15,22 +15,22 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>CloudWithStephen — AI Solutions & Web Development Agency</title>
-        <meta name="description" content="CloudWithStephen helps businesses grow online with AI automation, professional websites, and smart digital solutions. Get more customers, save time, and reduce costs." />
-        <meta name="keywords" content="CloudWithStephen, AI solutions, web development, AI chatbot, business automation, website design, ecommerce, Lagos, Nigeria" />
-        <meta name="author" content="CloudWithStephen" />
+        <title>CWS | CloudWithStephen — AI Solutions & Web Development</title>
+        <meta name="description" content="CWS (CloudWithStephen) helps businesses grow online with AI automation, professional websites, and smart digital solutions. Get more customers, save time, and reduce costs." />
+        <meta name="keywords" content="CWS, CloudWithStephen, Cloud With Stephen, AI solutions, web development, AI chatbot, business automation, website design, ecommerce, Lagos, Nigeria" />
+        <meta name="author" content="CWS — CloudWithStephen" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         
-        <meta property="og:title" content="CloudWithStephen — AI Solutions & Web Development Agency" />
-        <meta property="og:description" content="Helping businesses grow faster with AI automation and smart websites. Professional web development and AI solutions." />
+        <meta property="og:title" content="CWS | CloudWithStephen — AI Solutions & Web Development" />
+        <meta property="og:description" content="CWS helps businesses grow faster with AI automation and smart websites. Professional web development and AI solutions." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.cloudwithstephen.com" />
-        <meta property="og:site_name" content="CloudWithStephen" />
+        <meta property="og:site_name" content="CWS | CloudWithStephen" />
         <meta property="og:locale" content="en_US" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="CloudWithStephen — AI Solutions & Web Development" />
-        <meta name="twitter:description" content="AI automation & professional websites for business growth." />
+        <meta name="twitter:title" content="CWS | CloudWithStephen — AI Solutions & Web Development" />
+        <meta name="twitter:description" content="CWS — AI automation & professional websites for business growth." />
         
         <link rel="canonical" href="https://www.cloudwithstephen.com" />
         
@@ -39,10 +39,10 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "CloudWithStephen",
+            "name": "CWS — CloudWithStephen",
+            "alternateName": ["CWS", "Cloud With Stephen", "CloudWithStephen"],
             "url": "https://www.cloudwithstephen.com",
             "logo": "https://www.cloudwithstephen.com/favicon.png",
-            "description": "AI Solutions & Web Development Agency helping businesses grow online with AI automation, professional websites, and smart digital solutions.",
             "founder": {
               "@type": "Person",
               "name": "Stephen James",
@@ -71,9 +71,10 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "CloudWithStephen",
+            "name": "CWS — CloudWithStephen",
+            "alternateName": "CWS",
             "url": "https://www.cloudwithstephen.com",
-            "description": "AI Solutions & Web Development Agency"
+            "description": "CWS — AI Solutions & Web Development Agency"
           })}
         </script>
 
@@ -82,9 +83,10 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "CloudWithStephen",
+            "name": "CWS — CloudWithStephen",
+            "alternateName": "CWS",
             "url": "https://www.cloudwithstephen.com",
-            "description": "AI automation and web development services for businesses in Nigeria and worldwide.",
+            "description": "CWS — AI automation and web development services for businesses in Nigeria and worldwide.",
             "priceRange": "₦₦",
             "address": { "@type": "PostalAddress", "addressCountry": "NG", "addressLocality": "Lagos" },
             "serviceType": ["AI Solutions", "Web Development", "AI Chatbots", "Business Automation"]
