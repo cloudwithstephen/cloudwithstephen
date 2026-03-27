@@ -71,9 +71,10 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "CloudWithStephen",
+            "name": "CWS — CloudWithStephen",
+            "alternateName": "CWS",
             "url": "https://www.cloudwithstephen.com",
-            "description": "AI Solutions & Web Development Agency"
+            "description": "CWS — AI Solutions & Web Development Agency"
           })}
         </script>
 
@@ -82,9 +83,10 @@ const Index = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "CloudWithStephen",
+            "name": "CWS — CloudWithStephen",
+            "alternateName": "CWS",
             "url": "https://www.cloudwithstephen.com",
-            "description": "AI automation and web development services for businesses in Nigeria and worldwide.",
+            "description": "CWS — AI automation and web development services for businesses in Nigeria and worldwide.",
             "priceRange": "₦₦",
             "address": { "@type": "PostalAddress", "addressCountry": "NG", "addressLocality": "Lagos" },
             "serviceType": ["AI Solutions", "Web Development", "AI Chatbots", "Business Automation"]
