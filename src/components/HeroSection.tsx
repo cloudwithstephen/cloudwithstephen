@@ -5,7 +5,7 @@ import stephenHero from "@/assets/stephen-hero.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section id="home" aria-label="Hero" className="relative min-h-screen flex items-center overflow-hidden bg-background">
       {/* Subtle grid background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--muted)/0.15)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--muted)/0.15)_1px,transparent_1px)] bg-[size:64px_64px]" />

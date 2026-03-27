@@ -16,16 +16,10 @@ const Index = () => {
     <>
       <Helmet>
         <title>CloudWithStephen — AI Solutions & Web Development Agency</title>
-        <meta
-          name="description"
-          content="CloudWithStephen helps businesses grow online with AI automation, professional websites, and smart digital solutions. Get more customers, save time, and reduce costs."
-        />
-        <meta
-          name="keywords"
-          content="CloudWithStephen, AI solutions, web development, AI chatbot, business automation, website design, ecommerce, Lagos, Nigeria"
-        />
+        <meta name="description" content="CloudWithStephen helps businesses grow online with AI automation, professional websites, and smart digital solutions. Get more customers, save time, and reduce costs." />
+        <meta name="keywords" content="CloudWithStephen, AI solutions, web development, AI chatbot, business automation, website design, ecommerce, Lagos, Nigeria" />
         <meta name="author" content="CloudWithStephen" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         
         <meta property="og:title" content="CloudWithStephen — AI Solutions & Web Development Agency" />
         <meta property="og:description" content="Helping businesses grow faster with AI automation and smart websites. Professional web development and AI solutions." />
@@ -40,19 +34,60 @@ const Index = () => {
         
         <link rel="canonical" href="https://www.cloudwithstephen.com" />
         
+        {/* Organization Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "CloudWithStephen",
             "url": "https://www.cloudwithstephen.com",
-            "description": "AI Solutions & Web Development Agency helping businesses grow online, automate operations, and save money.",
+            "logo": "https://www.cloudwithstephen.com/favicon.png",
+            "description": "AI Solutions & Web Development Agency helping businesses grow online with AI automation, professional websites, and smart digital solutions.",
+            "founder": {
+              "@type": "Person",
+              "name": "Stephen James",
+              "jobTitle": "AI Solutions Builder & Web Developer"
+            },
             "sameAs": [
               "https://github.com/cloudwithstephen",
               "https://linkedin.com/in/stephen-james-215907322"
             ],
+            "areaServed": { "@type": "Country", "name": "Nigeria" },
             "knowsAbout": ["AI Automation", "Web Development", "AI Chatbots", "Ecommerce", "Business Websites"],
-            "serviceType": ["AI Solutions", "Web Development", "Business Automation"]
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Solutions", "description": "AI chatbots, automation workflows, and intelligent business tools" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "description": "Professional websites, ecommerce stores, and web applications" }},
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Automation", "description": "Streamline operations with smart digital solutions" }}
+              ]
+            }
+          })}
+        </script>
+
+        {/* WebSite Schema for Sitelinks */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "CloudWithStephen",
+            "url": "https://www.cloudwithstephen.com",
+            "description": "AI Solutions & Web Development Agency"
+          })}
+        </script>
+
+        {/* LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "CloudWithStephen",
+            "url": "https://www.cloudwithstephen.com",
+            "description": "AI automation and web development services for businesses in Nigeria and worldwide.",
+            "priceRange": "₦₦",
+            "address": { "@type": "PostalAddress", "addressCountry": "NG", "addressLocality": "Lagos" },
+            "serviceType": ["AI Solutions", "Web Development", "AI Chatbots", "Business Automation"]
           })}
         </script>
       </Helmet>
