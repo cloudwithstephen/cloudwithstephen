@@ -16,37 +16,44 @@ const team: TeamMember[] = [
     name: "Stephen James",
     role: "Founder & Lead Developer",
     bio: "AI solutions builder and full-stack web developer passionate about helping businesses scale through technology.",
-    image: "https://ui-avatars.com/api/?name=SJ&background=3b82f6&color=fff&size=256&font-size=0.45&bold=true",
+    image:
+      "https://ui-avatars.com/api/?name=SJ&background=3b82f6&color=fff&size=256&font-size=0.45&bold=true",
     linkedin: "https://linkedin.com/in/stephen-james-215907322",
+    twitter: "#",
   },
   {
-    name: "Sarah Chen",
+    name: "Joseph Hassan Gk",
     role: "AI Engineer",
     bio: "Builds intelligent automation workflows and custom AI chatbots for modern business applications.",
-    image: "https://ui-avatars.com/api/?name=SC&background=14b8a6&color=fff&size=256&font-size=0.45&bold=true",
+    image:
+      "https://ui-avatars.com/api/?name=SC&background=14b8a6&color=fff&size=256&font-size=0.45&bold=true",
     linkedin: "#",
     twitter: "#",
   },
   {
-    name: "David Adeyemi",
+    name: "Henry David",
     role: "UI/UX Designer",
     bio: "Crafts beautiful, conversion-focused interfaces with a sharp eye for detail and user experience.",
-    image: "https://ui-avatars.com/api/?name=DA&background=8b5cf6&color=fff&size=256&font-size=0.45&bold=true",
+    image:
+      "https://ui-avatars.com/api/?name=DA&background=8b5cf6&color=fff&size=256&font-size=0.45&bold=true",
     linkedin: "#",
+    twitter: "#",
   },
   {
     name: "Amara Okafor",
     role: "Project Manager",
     bio: "Keeps projects on track with clear communication and efficient delivery timelines.",
-    image: "https://ui-avatars.com/api/?name=AO&background=f59e0b&color=fff&size=256&font-size=0.45&bold=true",
+    image:
+      "https://ui-avatars.com/api/?name=AO&background=f59e0b&color=fff&size=256&font-size=0.45&bold=true",
     linkedin: "#",
     twitter: "#",
   },
   {
-    name: "Michael Eze",
+    name: "Dawi Joseph",
     role: "Photographer & Visual Director",
     bio: "Captures compelling visuals that elevate brand identity and create lasting impressions.",
-    image: "https://ui-avatars.com/api/?name=ME&background=ec4899&color=fff&size=256&font-size=0.45&bold=true",
+    image:
+      "https://ui-avatars.com/api/?name=ME&background=ec4899&color=fff&size=256&font-size=0.45&bold=true",
     linkedin: "#",
     twitter: "#",
   },
@@ -54,7 +61,10 @@ const team: TeamMember[] = [
 
 const TeamSection = () => {
   return (
-    <section id="team" className="py-20 sm:py-28 bg-background relative overflow-hidden">
+    <section
+      id="team"
+      className="py-20 sm:py-28 bg-background relative overflow-hidden"
+    >
       {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/[0.03] blur-[150px]" />
 
@@ -76,7 +86,8 @@ const TeamSection = () => {
               Meet the Team
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-lg mx-auto">
-              A passionate group of engineers, designers, and creatives dedicated to building solutions that drive real results.
+              A passionate group of engineers, designers, and creatives
+              dedicated to building solutions that drive real results.
             </p>
           </motion.div>
         </div>
