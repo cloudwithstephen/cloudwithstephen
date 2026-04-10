@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import cwsLogo from "@/assets/cws-logo.png";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const navLinks = [
   { href: "#services", label: "Services", isHash: true },
@@ -34,7 +34,6 @@ const Navigation = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -104,27 +103,36 @@ const Navigation = () => {
                 </Button>
               </div>
 
-              {/* Hamburger — animated */}
+              {/* Modern hamburger */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-muted/50 transition-colors"
+                className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-muted/50 border border-border/40 hover:bg-muted/80 hover:border-primary/20 transition-all duration-300"
                 aria-label="Toggle menu"
               >
-                <div className="w-5 h-4 flex flex-col justify-between relative">
-                  <span
-                    className={`block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center ${
-                      isOpen ? "rotate-45 translate-y-[7px]" : ""
-                    }`}
+                <div className="w-[18px] h-[14px] flex flex-col justify-between relative">
+                  <motion.span
+                    animate={isOpen
+                      ? { rotate: 45, y: 6, width: 18 }
+                      : { rotate: 0, y: 0, width: 18 }
+                    }
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    className="block h-[2px] bg-foreground rounded-full origin-center"
                   />
-                  <span
-                    className={`block h-0.5 w-3.5 bg-foreground rounded-full transition-all duration-300 ml-auto ${
-                      isOpen ? "opacity-0 scale-x-0" : ""
-                    }`}
+                  <motion.span
+                    animate={isOpen
+                      ? { opacity: 0, x: 8 }
+                      : { opacity: 1, x: 0 }
+                    }
+                    transition={{ duration: 0.2 }}
+                    className="block h-[2px] w-3 bg-foreground rounded-full ml-auto"
                   />
-                  <span
-                    className={`block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center ${
-                      isOpen ? "-rotate-45 -translate-y-[7px]" : ""
-                    }`}
+                  <motion.span
+                    animate={isOpen
+                      ? { rotate: -45, y: -6, width: 18 }
+                      : { rotate: 0, y: 0, width: 18 }
+                    }
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    className="block h-[2px] bg-foreground rounded-full origin-center"
                   />
                 </div>
               </button>
@@ -133,60 +141,95 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* Full-screen mobile menu */}
+      {/* Full-screen mobile menu — modernized */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-2xl lg:hidden"
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-40 lg:hidden"
           >
-            <div className="flex flex-col items-center justify-center min-h-screen gap-2 px-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                >
-                  {link.isHash ? (
-                    <a
-                      href={location.pathname === "/" ? link.href : `/${link.href}`}
-                      onClick={() => handleNavClick(link.href, true)}
-                      className="block text-2xl sm:text-3xl font-medium text-muted-foreground hover:text-foreground py-3 transition-colors text-center"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block text-2xl sm:text-3xl font-medium text-muted-foreground hover:text-foreground py-3 transition-colors text-center"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </motion.div>
-              ))}
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-background/98 backdrop-blur-3xl" />
+
+            {/* Subtle grid */}
+            <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--muted)/0.04)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--muted)/0.04)_1px,transparent_1px)] bg-[size:48px_48px]" />
+
+            {/* Glow */}
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[300px] h-[300px] rounded-full bg-primary/[0.06] blur-[100px]" />
+
+            <div className="relative flex flex-col justify-center min-h-screen px-8 sm:px-12">
+              {/* Nav links */}
+              <div className="space-y-1">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -24 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.35, delay: 0.05 + i * 0.05 }}
+                  >
+                    {link.isHash ? (
+                      <a
+                        href={location.pathname === "/" ? link.href : `/${link.href}`}
+                        onClick={() => handleNavClick(link.href, true)}
+                        className="group flex items-center justify-between py-4 border-b border-border/20 hover:border-primary/30 transition-all duration-300"
+                      >
+                        <span className="text-2xl sm:text-3xl font-semibold text-foreground/80 group-hover:text-foreground transition-colors duration-300">
+                          {link.label}
+                        </span>
+                        <ArrowRight className="w-5 h-5 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="group flex items-center justify-between py-4 border-b border-border/20 hover:border-primary/30 transition-all duration-300"
+                      >
+                        <span className="text-2xl sm:text-3xl font-semibold text-foreground/80 group-hover:text-foreground transition-colors duration-300">
+                          {link.label}
+                        </span>
+                        <ArrowRight className="w-5 h-5 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                      </Link>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.3, delay: navLinks.length * 0.05 }}
-                className="mt-6"
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ duration: 0.35, delay: 0.05 + navLinks.length * 0.05 }}
+                className="mt-10"
               >
-                <Button size="lg" className="rounded-full px-10 py-6 text-base" asChild>
+                <Button
+                  size="lg"
+                  className="w-full rounded-2xl px-8 py-7 text-base font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-shadow duration-300"
+                  asChild
+                >
                   <a
                     href={location.pathname === "/" ? "#contact" : "/#contact"}
                     onClick={() => setIsOpen(false)}
                   >
                     Get Started
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </Button>
               </motion.div>
+
+              {/* Bottom tagline */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-8 text-xs text-muted-foreground/50 text-center tracking-widest uppercase"
+              >
+                AI Solutions & Web Development
+              </motion.p>
             </div>
           </motion.div>
         )}
