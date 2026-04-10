@@ -100,6 +100,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <ServicesSection />
+          <TeamSection />
           <HowItWorksSection />
           <WhyChooseUsSection />
           <ResultsSection />
