@@ -1,44 +1,43 @@
 <div align="center">
 
-<!-- Animated Header -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:6366f1&height=200&section=header&text=CloudWithStephen&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" />
 
-<!-- Typing Animation -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&pause=1000&color=0EA5E9&center=true&vCenter=true&width=600&lines=Freelancer+%26+Web+Development+Agency+Owner;Helping+Businesses+Build+Online+Presence;Cloud+%7C+DevOps+%7C+Modern+Web+Solutions" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&pause=1000&color=0EA5E9&center=true&vCenter=true&width=600&lines=I+Build+Products+That+Actually+Work;Frontend+Engineer+%7C+Cloud+%7C+DevOps;Helping+Businesses+Scale+Online" />
 
 </div>
 
 ---
 
-## 👋 About Me
+## 👋 About
 
-Hi, I'm **Stephen**, founder of **CloudWithStephen** — a freelance web developer and agency owner helping businesses grow online through modern, scalable web solutions.
+I’m Stephen — I build and ship web products.
 
-I work with business owners who want more than just a website — they want a strong **digital presence that attracts customers and drives results**.
+I run **CloudWithStephen**, where I help businesses go from idea → live product without all the unnecessary complexity.
 
----
-
-## 🚀 Services
-
-✅ Business & Company Websites  
-✅ eCommerce Development  
-✅ Landing Pages That Convert  
-✅ Website Redesign & Optimization  
-✅ Cloud Deployment & Hosting Setup  
-✅ Performance & SEO Optimization  
+No fluff. No overengineering. Just clean builds that work and scale.
 
 ---
 
-## 💼 Who I Work With
+## 🚀 What I Do
 
-- Startups launching online
-- Small & growing businesses
-- Entrepreneurs & personal brands
-- Companies moving their business online
+- Build fast, responsive web apps  
+- Turn ideas into production-ready products  
+- Fix slow, broken, or outdated websites  
+- Set up cloud infrastructure that doesn’t break at scale  
+- Optimize performance so your app actually feels fast  
 
 ---
 
-## 🧠 Tech Stack
+## 💼 Who This Is For
+
+- Founders who want to launch fast  
+- Businesses tired of “developers” who don’t deliver  
+- Startups that need structure, not chaos  
+- Anyone serious about building something real  
+
+---
+
+## 🧠 Stack I Work With
 
 <p align="center">
 
@@ -54,13 +53,13 @@ I work with business owners who want more than just a website — they want a st
 
 ## 🌍 Availability
 
-🌍 Africa (GMT+0)  
-💻 Open to Remote Projects & Collaborations  
-🤝 Available for freelance and long-term business partnerships
+Remote. Flexible. Focused.
+
+If the project is solid, I’m in.
 
 ---
 
-## 📈 GitHub Stats
+## 📈 GitHub
 
 <div align="center">
 
@@ -72,16 +71,16 @@ I work with business owners who want more than just a website — they want a st
 
 ---
 
-## 🔗 Connect With Me
+## 🔗 Reach Out
 
-📺 YouTube: **CloudWithStephen**  
-🌐 Portfolio: **cloudwithstephen.com**
+📺 YouTube: CloudWithStephen  
+🌐 Portfolio: cloudwithstephen.com  
 
 ---
 
 <div align="center">
 
-⭐ *Building businesses online, one project at a time.*
+⚡ Build fast. Ship fast. Fix later if needed.
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6366f1,100:0ea5e9&height=120&section=footer"/>
 
