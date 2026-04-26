@@ -1,188 +1,214 @@
-import { Code2, ShoppingCart, LayoutDashboard, Globe, Users, Rocket, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { Sparkles, Target, Zap, Heart, ArrowUpRight } from "lucide-react";
 
-const services = [
+const pillars = [
   {
-    icon: Globe,
-    title: "Business Websites",
+    icon: Target,
+    title: "Outcome-Driven",
     description:
-      "Professional, responsive websites that showcase your brand and convert visitors into customers. From single-page sites to multi-page corporate platforms.",
+      "We don't just ship features — we ship results. Every line of code is tied to a business outcome that moves your numbers.",
   },
   {
-    icon: ShoppingCart,
-    title: "E-Commerce Stores",
+    icon: Zap,
+    title: "Built to Scale",
     description:
-      "Fully functional online stores with payment integration, product management, and a seamless shopping experience that drives sales.",
+      "Modern stacks, clean architecture, and AI-first thinking. Your product will perform on day one and on day one thousand.",
   },
   {
-    icon: LayoutDashboard,
-    title: "Web Apps & Dashboards",
+    icon: Heart,
+    title: "Partner, Not Vendor",
     description:
-      "Custom web applications, admin dashboards, and SaaS platforms built with modern frameworks for speed, scalability, and great UX.",
-  },
-  {
-    icon: Code2,
-    title: "Landing Pages & Funnels",
-    description:
-      "High-converting landing pages designed to capture leads, promote products, and grow your business online with measurable results.",
+      "We embed with your team, share the wins, and stay long after launch. Your growth is the only KPI that matters.",
   },
 ];
 
-const traits = [
-  { icon: Users, label: "Dedicated Support" },
-  { icon: Rocket, label: "Fast Turnaround" },
-  { icon: Shield, label: "Quality Guaranteed" },
+const stats = [
+  { value: "50+", label: "Products Shipped" },
+  { value: "30+", label: "Happy Clients" },
+  { value: "3+", label: "Years Building" },
+  { value: "100%", label: "Satisfaction" },
 ];
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
 };
 
-const staggerContainer = {
+const stagger = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
 };
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-radial from-accent/5 via-transparent to-transparent opacity-50" />
+    <section id="about" className="relative py-24 md:py-32 overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/[0.08] blur-3xl" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/[0.08] blur-3xl" />
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+      </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
+          {/* Header */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px" }}
             variants={fadeInUp}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mb-16 md:mb-20"
           >
-            <span className="inline-block font-mono text-sm text-primary mb-4">
-              // our services
-            </span>
-            <h2 className="section-heading">What We Build</h2>
-            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              We craft beautiful, high-performing websites and web applications tailored to your business goals.
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-card/40 backdrop-blur-sm mb-6">
+              <Sparkles className="w-3.5 h-3.5 text-primary" />
+              <span className="text-xs font-medium text-muted-foreground tracking-wide uppercase">
+                About CWS
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-6">
+              We build the{" "}
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                digital infrastructure
+              </span>{" "}
+              behind growing businesses.
+            </h2>
+
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              CWS (CloudWithStephen) is a small, senior team of engineers and
+              designers shipping AI-powered products and high-performance
+              websites for founders who care about craft.
             </p>
           </motion.div>
 
-          {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
-            {/* Text Content */}
+          {/* Two-column: story + visual */}
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-20 md:mb-24">
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-80px" }}
               variants={fadeInUp}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="space-y-6"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="lg:col-span-7 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed"
             >
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p>
+                We started CWS with a simple belief:{" "}
                 <span className="text-foreground font-medium">
-                  CWS (CloudWithStephen)
+                  most businesses don't need more software — they need software
+                  that actually works.
                 </span>{" "}
-                is a web development agency that helps businesses{" "}
-                <span className="text-primary font-medium">
-                  launch and grow their online presence
-                </span>
-                . We specialize in building{" "}
-                <span className="text-primary font-medium">
-                  custom websites, e-commerce stores, and web applications
-                </span>{" "}
-                that look great and perform even better.
+                Fast, reliable, and built for the way modern teams operate.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you're a startup launching your first product, a small business needing an online store, or a growing company that needs a custom web app—we've got you covered.
+              <p>
+                Today we partner with startups, ecommerce brands, and growing
+                companies across Africa and beyond — combining product
+                engineering with AI automation to remove friction, cut costs,
+                and unlock new revenue.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Every project is built with clean code, responsive design, and SEO best practices so your site works beautifully on every device and ranks well on search engines.
+              <p>
+                No bloated agencies. No endless retainers. Just a focused team
+                that ships work you'd be proud to put your name on.
               </p>
 
-              {/* Traits */}
-              <div className="flex flex-wrap gap-3 pt-4">
-                {traits.map((trait, index) => (
-                  <motion.div
-                    key={trait.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border"
-                  >
-                    <trait.icon className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium">{trait.label}</span>
-                  </motion.div>
-                ))}
-              </div>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 mt-4 text-foreground font-medium group"
+              >
+                <span className="border-b border-foreground/30 group-hover:border-foreground transition-colors pb-0.5">
+                  Start a conversation
+                </span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
             </motion.div>
 
-            {/* Service Cards */}
+            {/* Visual / quote card */}
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-              className="space-y-4"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={fadeInUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-5"
             >
-              {services.map((item) => (
-                <motion.div
-                  key={item.title}
-                  variants={fadeInUp}
-                  transition={{ duration: 0.4 }}
-                  className="glass-card glow-border p-6 group hover:bg-card/70 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                      <item.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {item.description}
-                      </p>
+              <div className="relative rounded-2xl border border-border/60 bg-gradient-to-br from-card/80 to-card/30 backdrop-blur-sm p-8 md:p-10 overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-primary/15 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full bg-accent/15 blur-2xl" />
+
+                <div className="relative">
+                  <div className="text-5xl md:text-6xl font-bold text-primary/30 leading-none mb-4">
+                    &ldquo;
+                  </div>
+                  <p className="text-lg md:text-xl text-foreground leading-relaxed font-medium mb-6">
+                    Build fast. Ship clean. Treat every project like it's our
+                    own.
+                  </p>
+                  <div className="h-px bg-border mb-5" />
+                  <div>
+                    <div className="font-semibold">Stephen James</div>
+                    <div className="text-sm text-muted-foreground">
+                      Founder, CWS
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                </div>
+              </div>
             </motion.div>
           </div>
 
-          {/* Stats */}
+          {/* Pillars */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-border"
+            variants={stagger}
+            className="grid md:grid-cols-3 gap-5 md:gap-6 mb-20 md:mb-24"
           >
-            {[
-              { value: "50+", label: "Websites Delivered" },
-              { value: "30+", label: "Happy Clients" },
-              { value: "3+", label: "Years Experience" },
-              { value: "100%", label: "Satisfaction Rate" },
-            ].map((stat) => (
+            {pillars.map((p) => (
               <motion.div
-                key={stat.label}
+                key={p.title}
+                variants={fadeInUp}
+                transition={{ duration: 0.5 }}
+                className="group relative rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm p-7 hover:border-primary/40 hover:bg-card/70 transition-all duration-300"
+              >
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="relative">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <p.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {p.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Stats strip */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={stagger}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-10 md:pt-12 border-t border-border/60"
+          >
+            {stats.map((s) => (
+              <motion.div
+                key={s.label}
                 variants={fadeInUp}
                 transition={{ duration: 0.4 }}
-                className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                  {stat.value}
+                <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-1.5 bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent">
+                  {s.value}
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
+                <div className="text-sm text-muted-foreground">{s.label}</div>
               </motion.div>
             ))}
           </motion.div>
