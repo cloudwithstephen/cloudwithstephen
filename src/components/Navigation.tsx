@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 
 const navLinks = [
   { href: "#services", label: "Services", isHash: true },
-  { href: "#about", label: "About", isHash: true },
+  { href: "/about", label: "About", isHash: false },
   { href: "#workflow", label: "How It Works", isHash: true },
   { href: "#pricing", label: "Pricing", isHash: true },
   { href: "#testimonials", label: "Testimonials", isHash: true },
