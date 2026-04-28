@@ -1,5 +1,6 @@
 import { Linkedin, Twitter, Camera } from "lucide-react";
 import { motion } from "framer-motion";
+import stephenJames from "@/assets/stephen-james.jpg";
 
 interface TeamMember {
   name: string;
@@ -14,10 +15,9 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: "Stephen James",
-    role: "Founder & Lead Developer",
+    role: "Founder & CEO",
     bio: "AI solutions builder and full-stack web developer passionate about helping businesses scale through technology.",
-    image:
-      "https://ui-avatars.com/api/?name=SJ&background=3b82f6&color=fff&size=256&font-size=0.45&bold=true",
+    image: stephenJames,
     linkedin: "https://linkedin.com/in/stephen-james-215907322",
     twitter: "#",
   },
@@ -128,7 +128,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           <img
             src={member.image}
             alt={member.name}
-            className="relative w-16 h-16 rounded-full object-cover ring-2 ring-border/30 group-hover:ring-primary/30 transition-all duration-300"
+            className="relative w-16 h-16 rounded-full object-cover object-top ring-2 ring-border/30 group-hover:ring-primary/30 transition-all duration-300"
             loading="lazy"
           />
         </div>

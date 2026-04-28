@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import stephenJames from "@/assets/stephen-james.jpg";
 
 const principles = [
   {
@@ -249,11 +250,16 @@ const About = () => {
                   own."
                 </motion.blockquote>
                 <div className="mt-8 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/40 to-accent/40" />
+                  <img
+                    src={stephenJames}
+                    alt="Stephen James, Founder & CEO of CWS"
+                    className="w-12 h-12 rounded-full object-cover object-top ring-2 ring-border/40"
+                    loading="lazy"
+                  />
                   <div>
                     <div className="font-medium text-sm">Stephen James</div>
                     <div className="text-xs text-muted-foreground">
-                      Founder, CWS
+                      Founder & CEO, CWS
                     </div>
                   </div>
                 </div>
